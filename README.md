@@ -137,7 +137,7 @@ execCase(r'D:\appium\testcase\home\home_more_adv.yaml', test_id="2004", test_int
 
 ![testReportDetail.png](testReportDetail.png "testReportDetail.png")
 
-![testEmail.png](testMail.png "testMail.png")
+![testEmail.png](testEmail.png "testMail.png")
 
 # 2016-9-5
 * 三层架构重构整个系统
