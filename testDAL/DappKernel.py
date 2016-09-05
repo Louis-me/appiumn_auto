@@ -37,7 +37,7 @@ def get_men_total(cmd_log):
                     break
     if os.path.exists(cmd_log):
         os.remove(cmd_log)
-    return str(ceil(int(men_total)/1000)) + "M"
+    return int(men_total)
 # 得到几核cpu
 def get_cpu_kel(log):
     os.system("adb shell cat /proc/cpuinfo >" + log)

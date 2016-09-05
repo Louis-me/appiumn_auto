@@ -16,7 +16,7 @@ from testBLL import BExcelReport
 from testBLL import BappKernel
 from testBLL import BAppBaseMsg
 from Common.CoGlobal import *
-
+import math
 def get_email():
     email = BgetEmail.read_email("D:\\app\\appium_study\\email.ini")
     me = Memail.email()
@@ -55,14 +55,20 @@ def get_common_report(start_test_time, endtime, starttime):
     common.RRPORT["phone_name"] = g_phone[0]["phone_name"] +" " +g_phone[0]["phone_model"]
     common.RRPORT["phone_rel"] = g_phone[0]["release"]
     common.RRPORT["phone_pix"] = g_phone[3]
-    common.RRPORT["phone_raw"] = g_phone[1]
-    common.RRPORT["phone_avg_use_raw"] = "内存平均使用情况"
-    common.RRPORT["phone_max_use_raw"] = "内存最大峰值"
+    raw = g_phone[1]/1024
+    common.RRPORT["phone_raw"] = str(math.ceil(raw)) + "M"
+
+    # str(ceil(int(men_total)/1000)) + "M"
+    men = [math.ceil((int(common.MEN[i])/1024)/raw) for i in range(len(common.MEN))]  # 获取每次占用内存多少
+
+    common.RRPORT["phone_avg_use_raw"] = str(math.ceil(sum(men)/len(men))) + "%" # 平均占用内存率
+    common.RRPORT["phone_max_use_raw"] = str(math.ceil(max(common.MEN)/1024)) + "KB" # 最大运行内存
     common.RRPORT["phone_cpu"] = g_phone[2]
-    common.RRPORT["phone_avg_use_cpu"] = "cpu平均使用情况"
-    common.RRPORT["phone_avg_max_use_cpu"] = "cpu最大峰值使用情况"
+    common.RRPORT["phone_avg_use_cpu"] = str(math.ceil(sum(common.CPU)/len(common.CPU))) + "%" # cpu平均占用情况
+    common.RRPORT["phone_avg_max_use_cpu"] = str(max(common.CPU)) + "%" # cpu最大峰值
     common.RRPORT["app_version"] = appbase[2]
     common.RRPORT["test_date"] = start_test_time
+
 
 def runnerCaseApp():
     start_test_time = time.strftime("%Y-%m-%d %H:%M %p", time.localtime())
@@ -94,6 +100,7 @@ if __name__ == '__main__':
             while not appium_server.is_runnnig():
                 time.sleep(1)
             runnerCaseApp()
+            appium_server.stop_server()
             report(appium_server)
     else:
         print(u"设备不存在")

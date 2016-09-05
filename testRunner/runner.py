@@ -25,7 +25,7 @@ class TestInterfaceCase(unittest.TestCase):
             desired_caps['appActivity'] = ga.appActivity
             # desired_caps["unicodeKeyboard"] = "True"
             # desired_caps["resetKeyboard"] = "True"
-
+            common.PACKAGE = ga.appPackage
             driver = webdriver.Remote(ga.Remote, desired_caps)
 
             common.DRIVER = driver
