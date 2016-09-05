@@ -1,0 +1,15 @@
+﻿--- 
+- 
+  element_info: "com.dgm.user:id/homepage_my_ll"
+  findElemtType: id
+  operate_type: click
+  test_id: 1001
+  test_intr: 个人中心
+- 
+  element_info: "com.dgm.user:id/my_order_layout"
+  findElemtType: id
+  operate_type: click
+- 
+  element_info: "com.dgm.user:id/activity_myallorder_cashpay_rl"
+  findElemtType: id
+  find_type: find
