@@ -2,7 +2,7 @@ __author__ = 'Administrator'
 # -*- coding: utf-8 -*-
 from selenium.webdriver.support.ui import WebDriverWait
 import selenium.common.exceptions
-
+from testDAL import DAppPerformance
 from Common.CoGlobal import *
 
 
@@ -44,6 +44,8 @@ class getOperateElement():
             common.TAP: lambda: operate_tap(elemen_by, self.cts, element_info, arg),
             common.SEND_KEYS: lambda: send_keys(elemen_by, self.cts, element_info, kwargs)
         }
+        # 监控性能信息
+
         return elements[operate]()
 
 # 点击事件
@@ -62,7 +64,6 @@ def send_keys(elemen_by,cts,element_info, kwargs):
 def find_str(elements_by,cts,element_info, msg):
    # return ex_str.find(msg)
    result = elements_by(elements_by, cts, element_info).text().find(msg)
-   print(result)
    return result
 
 # 封装常用的find标签

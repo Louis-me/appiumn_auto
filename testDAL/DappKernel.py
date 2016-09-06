@@ -57,3 +57,10 @@ def get_cpu_kel(log):
 def get_app_pix():
     result = os.popen("adb shell wm size", "r")
     return result.readline().split("Physical size:")[1]
+
+def get_phone_Kernel(log):
+    pix = get_app_pix()
+    men_total = get_men_total(log)
+    phone_msg = getPhoneMsg(log)
+    cpu_sum = get_cpu_kel(log)
+    return phone_msg, men_total, cpu_sum, pix

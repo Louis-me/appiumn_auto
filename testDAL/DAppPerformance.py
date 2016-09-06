@@ -5,7 +5,7 @@ cpu = []
 men = []
 # flow = [[],[]]
 def top_cpu(pkg_name):
-    result = ""
+    result = 0
     cmd = "adb shell dumpsys cpuinfo | grep -w " + pkg_name+":"
     temp = []
     # cmd = "adb shell top -n %s -s cpu | grep %s$" %(str(times), pkg_name)
@@ -13,10 +13,12 @@ def top_cpu(pkg_name):
     for info in top_info:
         temp.append(info.split()[2].decode()) # bytes转换为string
         break
+    print("shikun1")
     for i in temp:
+        print(i)
         if i != "0%":
-            result = i.split("%")[0]
-    return int(result)
+            result = int(i.split("%")[0])
+    return result
 
 def get_men(pkg_name):
     result = ""
@@ -27,10 +29,15 @@ def get_men(pkg_name):
     for info in men_s:
         temp.append(info.split())
     m.append(temp)
+    print("shikun")
     for t in m:
-        result = t[19][1].decode()
-        break
-    return int(result)
+        result = t[19][1]
+        print(result)
+        print(result.decode())
+        print(type(result.decode()))
+        # break
+
+    return int(result.decode())
 
 # 取到流量后可以用步骤后的流量减去步骤前的流量得到步骤消耗流量！也可以用时间差来计算！
 # def getFlow(pid="31586"):

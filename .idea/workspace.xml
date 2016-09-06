@@ -28,53 +28,9 @@
       <file leaf-file-name="runner4.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/testRunner/runner4.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1044" max-vertical-offset="2128">
-              <caret line="75" column="39" selection-start-line="75" selection-start-column="39" selection-end-line="75" selection-end-column="39" />
-              <folding>
-                <element signature="e#53#68#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BappKernel.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/testBLL/BappKernel.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="380">
-              <caret line="4" column="25" selection-start-line="4" selection-start-column="25" selection-end-line="4" selection-end-column="25" />
+            <state vertical-scroll-proportion="-4.142857" vertical-offset="625" max-vertical-offset="2337">
+              <caret line="39" column="28" selection-start-line="39" selection-start-column="28" selection-end-line="39" selection-end-column="28" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DappKernel.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/testDAL/DappKernel.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="737" max-vertical-offset="1197">
-              <caret line="56" column="18" selection-start-line="56" selection-start-column="18" selection-end-line="56" selection-end-column="18" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Home.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/testCase/home/Home.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="646">
-              <caret line="3" column="38" selection-start-line="3" selection-start-column="38" selection-end-line="3" selection-end-column="38" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Home1.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/testCase/home/Home1.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="171" max-vertical-offset="646">
-              <caret line="26" column="23" selection-start-line="26" selection-start-column="23" selection-end-line="26" selection-end-column="23" />
-              <folding>
-                <element signature="e#29#44#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -83,7 +39,7 @@
         <entry file="file://$PROJECT_DIR$/testBLL/BaseCaseList.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="361">
-              <caret line="11" column="19" selection-start-line="11" selection-start-column="19" selection-end-line="11" selection-end-column="19" />
+              <caret line="11" column="20" selection-start-line="11" selection-start-column="20" selection-end-line="11" selection-end-column="20" />
               <folding />
             </state>
           </provider>
@@ -92,8 +48,8 @@
       <file leaf-file-name="DBaseCaseList.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/testDAL/DBaseCaseList.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="683" max-vertical-offset="1653">
-              <caret line="54" column="54" selection-start-line="54" selection-start-column="54" selection-end-line="54" selection-end-column="54" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="699" max-vertical-offset="1615">
+              <caret line="53" column="54" selection-start-line="53" selection-start-column="54" selection-end-line="53" selection-end-column="54" />
               <folding>
                 <element signature="e#53#64#0" expanded="true" />
               </folding>
@@ -101,32 +57,80 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DAppPerformance.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="DBaseOperateElement.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/testDAL/DBaseOperateElement.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="171" max-vertical-offset="1558">
+              <caret line="19" column="11" selection-start-line="19" selection-start-column="11" selection-end-line="19" selection-end-column="11" />
+              <folding>
+                <element signature="e#53#108#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="reportPhone.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Common/reportPhone.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.97602737" vertical-offset="0" max-vertical-offset="494">
+              <caret line="15" column="30" selection-start-line="15" selection-start-column="30" selection-end-line="15" selection-end-column="30" />
+              <folding>
+                <element signature="e#29#40#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DAppPerformance.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/testDAL/DAppPerformance.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.7476852" vertical-offset="0" max-vertical-offset="950">
-              <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="515" max-vertical-offset="1083">
+              <caret line="36" column="36" selection-start-line="36" selection-start-column="36" selection-end-line="36" selection-end-column="36" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="email.ini" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/email.ini">
+      <file leaf-file-name="t.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/testRunner/t.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="247">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="209">
+              <caret line="3" column="36" selection-start-line="3" selection-start-column="3" selection-end-line="3" selection-end-column="36" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AppDevices.ini" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/AppDevices.ini">
+      <file leaf-file-name="DappKernel.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/testDAL/DappKernel.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-2.7142856" vertical-offset="0" max-vertical-offset="285">
-              <caret line="4" column="23" selection-start-line="4" selection-start-column="11" selection-end-line="4" selection-end-column="23" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="417" max-vertical-offset="1368">
+              <caret line="39" column="20" selection-start-line="39" selection-start-column="20" selection-end-line="39" selection-end-column="20" />
+              <folding>
+                <element signature="e#29#38#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Dreport.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/testDAL/Dreport.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="34" max-vertical-offset="494">
+              <caret line="11" column="50" selection-start-line="11" selection-start-column="41" selection-end-line="11" selection-end-column="50" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Mreport.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/testMode/Mreport.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-11.928572" vertical-offset="84" max-vertical-offset="551">
+              <caret line="22" column="36" selection-start-line="22" selection-start-column="36" selection-end-line="22" selection-end-column="36" />
+              <folding>
+                <element signature="e#29#64#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -136,12 +140,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/testRunner/t.py" />
-        <option value="$PROJECT_DIR$/testCase/home/testShi.py" />
-        <option value="$PROJECT_DIR$/testReport/testsReport.py" />
-        <option value="$PROJECT_DIR$/testCase/zhishang/daka.py" />
-        <option value="$PROJECT_DIR$/testAppBase/adb_common.py" />
-        <option value="$PROJECT_DIR$/testAppBase/AppPerformance.py" />
         <option value="$PROJECT_DIR$/testAppBase/AppBaseMsg.py" />
         <option value="$PROJECT_DIR$/AppDevices.ini" />
         <option value="$PROJECT_DIR$/testAppBase/appKernel.py" />
@@ -156,7 +154,6 @@
         <option value="$PROJECT_DIR$/testBLL/DAdbCommon.py" />
         <option value="$PROJECT_DIR$/testBLL/BAdbCommon.py" />
         <option value="$PROJECT_DIR$/testDAL/DtestServer.py" />
-        <option value="$PROJECT_DIR$/testBLL/BgetEmail.py" />
         <option value="$PROJECT_DIR$/testMode/Memail.py" />
         <option value="$PROJECT_DIR$/testDAL/DsendMail.py" />
         <option value="$PROJECT_DIR$/testBLL/BsendEmail.py" />
@@ -164,14 +161,9 @@
         <option value="$PROJECT_DIR$/testBLL/BExcelReport.py" />
         <option value="$PROJECT_DIR$/testDAL/DAppDevices.py" />
         <option value="$PROJECT_DIR$/testBLL/BAppDevices.py" />
-        <option value="$PROJECT_DIR$/testBLL/BappKernel.py" />
         <option value="$PROJECT_DIR$/testBLL/BtestServer.py" />
-        <option value="$PROJECT_DIR$/testDAL/DAppBaseMsg.py" />
-        <option value="$PROJECT_DIR$/testBLL/BAppBaseMsg.py" />
         <option value="$PROJECT_DIR$/email.ini" />
-        <option value="$PROJECT_DIR$/testDAL/DgetEmail.py" />
         <option value="$PROJECT_DIR$/testBaseOperate/BaseCaseList.py" />
-        <option value="$PROJECT_DIR$/testMode/mOperateElement.py" />
         <option value="$PROJECT_DIR$/testBLL/BOperateElement.py" />
         <option value="$PROJECT_DIR$/testDAL/DOperateElement.py" />
         <option value="$PROJECT_DIR$/testDAL/BaseOperateElement.py" />
@@ -182,11 +174,23 @@
         <option value="$PROJECT_DIR$/testCase/home/Home1.py" />
         <option value="$PROJECT_DIR$/Common/getXMl.py" />
         <option value="$PROJECT_DIR$/testBLL/BaseCaseList.py" />
-        <option value="$PROJECT_DIR$/testDAL/DBaseCaseList.py" />
         <option value="$PROJECT_DIR$/testRunner/runner.py" />
+        <option value="$PROJECT_DIR$/testDAL/DAppBaseMsg.py" />
+        <option value="$PROJECT_DIR$/testBLL/BAppBaseMsg.py" />
         <option value="$PROJECT_DIR$/testDAL/DappKernel.py" />
-        <option value="$PROJECT_DIR$/testRunner/runner4.py" />
+        <option value="$PROJECT_DIR$/testBLL/BappKernel.py" />
+        <option value="$PROJECT_DIR$/testBLL/BgetEmail.py" />
+        <option value="$PROJECT_DIR$/testDAL/DgetEmail.py" />
+        <option value="$PROJECT_DIR$/testMode/mOperateElement.py" />
+        <option value="$PROJECT_DIR$/testMode/mreport.py" />
+        <option value="$PROJECT_DIR$/testBLL/Breport.py" />
+        <option value="$PROJECT_DIR$/testDAL/Dreport.py" />
+        <option value="$PROJECT_DIR$/testDAL/DBaseOperateElement.py" />
+        <option value="$PROJECT_DIR$/testDAL/DBaseCaseList.py" />
+        <option value="$PROJECT_DIR$/testRunner/t.py" />
         <option value="$PROJECT_DIR$/testDAL/DAppPerformance.py" />
+        <option value="$PROJECT_DIR$/testRunner/runner4.py" />
+        <option value="$PROJECT_DIR$/Common/reportPhone.py" />
       </list>
     </option>
   </component>
@@ -342,25 +346,6 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="appium_study" />
       <option name="SCRIPT_NAME" value="D:\app\appium_study\testBLL\BaseCaseList.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <RunnerSettings RunnerId="PythonRunner" />
-      <ConfigurationWrapper RunnerId="PythonRunner" />
-      <method />
-    </configuration>
-    <configuration default="false" name="t (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/testRunner" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="appium_study" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/testRunner/t.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <RunnerSettings RunnerId="PythonRunner" />
@@ -546,21 +531,39 @@
       <ConfigurationWrapper RunnerId="PythonRunner" />
       <method />
     </configuration>
+    <configuration default="false" name="t (1)" type="PythonConfigurationType" factoryName="Python">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/testRunner" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="appium_study" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/testRunner/t.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <RunnerSettings RunnerId="PythonRunner" />
+      <ConfigurationWrapper RunnerId="PythonRunner" />
+      <method />
+    </configuration>
     <list size="6">
       <item index="0" class="java.lang.String" itemvalue="Python.test1" />
-      <item index="1" class="java.lang.String" itemvalue="Python.runner4" />
-      <item index="2" class="java.lang.String" itemvalue="Python.BaseCaseList" />
-      <item index="3" class="java.lang.String" itemvalue="Python.t (1)" />
+      <item index="1" class="java.lang.String" itemvalue="Python.t (1)" />
+      <item index="2" class="java.lang.String" itemvalue="Python.runner4" />
+      <item index="3" class="java.lang.String" itemvalue="Python.BaseCaseList" />
       <item index="4" class="java.lang.String" itemvalue="Python.BaseExcelReport" />
       <item index="5" class="java.lang.String" itemvalue="Python.appKernel" />
     </list>
     <recent_temporary>
-      <list size="5">
+      <list size="4">
         <item index="0" class="java.lang.String" itemvalue="Python.runner4" />
         <item index="1" class="java.lang.String" itemvalue="Python.appKernel" />
         <item index="2" class="java.lang.String" itemvalue="Python.BaseExcelReport" />
-        <item index="3" class="java.lang.String" itemvalue="Python.t (1)" />
-        <item index="4" class="java.lang.String" itemvalue="Python.BaseCaseList" />
+        <item index="3" class="java.lang.String" itemvalue="Python.BaseCaseList" />
       </list>
     </recent_temporary>
   </component>
@@ -588,7 +591,7 @@
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32852563" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2354788" sideWeight="0.49854013" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.45525903" sideWeight="0.49854013" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2003058" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -641,12 +644,36 @@
     </PATH>
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/testDAL/DAppPerformance.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="950">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/email.ini">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="247">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AppDevices.ini">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="76" max-vertical-offset="285">
+          <caret line="4" column="23" selection-start-line="4" selection-start-column="11" selection-end-line="4" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/testRunner/runner.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="699" max-vertical-offset="1140">
           <caret line="20" column="19" selection-start-line="20" selection-start-column="19" selection-end-line="20" selection-end-column="19" />
           <folding>
-            <element signature="e#53#68#0" expanded="true" />
+            <element signature="e#53#68#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -655,11 +682,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="2489" max-vertical-offset="3629">
           <caret line="139" column="0" selection-start-line="139" selection-start-column="0" selection-end-line="139" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/testMode/BaseReport.py">
+    <entry file="file://$PROJECT_DIR$/testMode/111.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="53" max-vertical-offset="893">
           <caret line="13" column="8" selection-start-line="13" selection-start-column="8" selection-end-line="13" selection-end-column="8" />
@@ -671,9 +697,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="1174" max-vertical-offset="1938">
           <caret line="68" column="53" selection-start-line="68" selection-start-column="53" selection-end-line="68" selection-end-column="53" />
-          <folding>
-            <element signature="e#53#68#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -690,7 +714,7 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="646">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#29#44#0" expanded="true" />
+            <element signature="e#29#44#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -758,14 +782,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Common/OperateFile.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1140">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Common/getXMl.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="342">
@@ -777,15 +793,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="2489" max-vertical-offset="3629">
           <caret line="139" column="0" selection-start-line="139" selection-start-column="0" selection-end-line="139" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testMode/BaseReport.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="53" max-vertical-offset="893">
-          <caret line="13" column="8" selection-start-line="13" selection-start-column="8" selection-end-line="13" selection-end-column="8" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -793,7 +800,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="610">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -807,36 +813,10 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/testRunner/runner.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="246" max-vertical-offset="988">
-          <caret line="27" column="29" selection-start-line="27" selection-start-column="29" selection-end-line="27" selection-end-column="29" />
-          <folding>
-            <element signature="e#53#68#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testCase/home/Home.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="646">
-          <caret line="3" column="38" selection-start-line="3" selection-start-column="38" selection-end-line="3" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/AppDevices.ini">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.7142856" vertical-offset="0" max-vertical-offset="285">
+        <state vertical-scroll-proportion="0.0" vertical-offset="76" max-vertical-offset="285">
           <caret line="4" column="23" selection-start-line="4" selection-start-column="11" selection-end-line="4" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Common/CoGlobal.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5043478" vertical-offset="319" max-vertical-offset="779">
-          <caret line="29" column="4" selection-start-line="29" selection-start-column="4" selection-end-line="29" selection-end-column="4" />
           <folding />
         </state>
       </provider>
@@ -849,38 +829,190 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/testBLL/BappKernel.py">
+    <entry file="file://$PROJECT_DIR$/testCase/home/Home1.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="171" max-vertical-offset="646">
+          <caret line="26" column="23" selection-start-line="26" selection-start-column="23" selection-end-line="26" selection-end-column="23" />
+          <folding>
+            <element signature="e#29#44#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testRunner/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="460">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testDAL/DAppBaseMsg.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="342" max-vertical-offset="1045">
+          <caret line="34" column="23" selection-start-line="34" selection-start-column="8" selection-end-line="34" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testDAL/DgetEmail.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="456">
+          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testBLL/BgetEmail.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="209">
+          <caret line="4" column="28" selection-start-line="4" selection-start-column="28" selection-end-line="4" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Common/OperateFile.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1140">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testMode/MBaseTestCase.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="551">
+          <caret line="5" column="0" selection-start-line="4" selection-start-column="56" selection-end-line="5" selection-end-column="0" />
+          <folding>
+            <element signature="e#30#65#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testMode/mOperateElement2222.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="342">
+          <caret line="5" column="1" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
+          <folding>
+            <element signature="e#29#64#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testMode/Memail.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="460">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#29#64#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testMode/111.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="57" max-vertical-offset="893">
+          <caret line="24" column="37" selection-start-line="24" selection-start-column="37" selection-end-line="24" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testMode/MAppDevices.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="380">
-          <caret line="4" column="25" selection-start-line="4" selection-start-column="25" selection-end-line="4" selection-end-column="25" />
+          <caret line="5" column="39" selection-start-line="5" selection-start-column="39" selection-end-line="5" selection-end-column="39" />
+          <folding>
+            <element signature="e#84#119#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testRunner/runner.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="114" max-vertical-offset="988">
+          <caret line="12" column="6" selection-start-line="12" selection-start-column="6" selection-end-line="12" selection-end-column="6" />
+          <folding>
+            <element signature="e#53#68#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testBLL/Breport.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="190">
+          <caret line="4" column="18" selection-start-line="4" selection-start-column="18" selection-end-line="4" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Common/CoGlobal.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5043478" vertical-offset="319" max-vertical-offset="779">
+          <caret line="29" column="4" selection-start-line="29" selection-start-column="4" selection-end-line="29" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testBLL/BAppBaseMsg.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.28913045" vertical-offset="0" max-vertical-offset="460">
+          <caret line="7" column="41" selection-start-line="7" selection-start-column="41" selection-end-line="7" selection-end-column="41" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/testDAL/DappKernel.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="737" max-vertical-offset="1197">
-          <caret line="56" column="18" selection-start-line="56" selection-start-column="18" selection-end-line="56" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testCase/home/Home1.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="171" max-vertical-offset="646">
-          <caret line="26" column="23" selection-start-line="26" selection-start-column="23" selection-end-line="26" selection-end-column="23" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="417" max-vertical-offset="1368">
+          <caret line="39" column="20" selection-start-line="39" selection-start-column="20" selection-end-line="39" selection-end-column="20" />
           <folding>
-            <element signature="e#29#44#0" expanded="true" />
+            <element signature="e#29#38#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/testRunner/runner4.py">
+    <entry file="file://$PROJECT_DIR$/testDAL/Dreport.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1044" max-vertical-offset="2128">
-          <caret line="75" column="39" selection-start-line="75" selection-start-column="39" selection-end-line="75" selection-end-column="39" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="34" max-vertical-offset="494">
+          <caret line="11" column="50" selection-start-line="11" selection-start-column="41" selection-end-line="11" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testMode/Mreport.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-11.928572" vertical-offset="84" max-vertical-offset="551">
+          <caret line="22" column="36" selection-start-line="22" selection-start-column="36" selection-end-line="22" selection-end-column="36" />
           <folding>
-            <element signature="e#53#68#0" expanded="true" />
+            <element signature="e#29#64#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testBLL/BappKernel.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.16521738" vertical-offset="0" max-vertical-offset="460">
+          <caret line="4" column="20" selection-start-line="4" selection-start-column="20" selection-end-line="4" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testCase/home/Home.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.49565217" vertical-offset="171" max-vertical-offset="646">
+          <caret line="21" column="21" selection-start-line="21" selection-start-column="21" selection-end-line="21" selection-end-column="21" />
+          <folding>
+            <element signature="e#29#44#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testDAL/DBaseCaseList.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="699" max-vertical-offset="1615">
+          <caret line="53" column="54" selection-start-line="53" selection-start-column="54" selection-end-line="53" selection-end-column="54" />
+          <folding>
+            <element signature="e#53#64#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -888,26 +1020,52 @@
     <entry file="file://$PROJECT_DIR$/testBLL/BaseCaseList.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="361">
-          <caret line="11" column="19" selection-start-line="11" selection-start-column="19" selection-end-line="11" selection-end-column="19" />
+          <caret line="11" column="20" selection-start-line="11" selection-start-column="20" selection-end-line="11" selection-end-column="20" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/testDAL/DBaseCaseList.py">
+    <entry file="file://$PROJECT_DIR$/testRunner/t.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="683" max-vertical-offset="1653">
-          <caret line="54" column="54" selection-start-line="54" selection-start-column="54" selection-end-line="54" selection-end-column="54" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="209">
+          <caret line="3" column="36" selection-start-line="3" selection-start-column="3" selection-end-line="3" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testDAL/DBaseOperateElement.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="171" max-vertical-offset="1558">
+          <caret line="19" column="11" selection-start-line="19" selection-start-column="11" selection-end-line="19" selection-end-column="11" />
           <folding>
-            <element signature="e#53#64#0" expanded="true" />
+            <element signature="e#53#108#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/testDAL/DAppPerformance.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7476852" vertical-offset="0" max-vertical-offset="950">
-          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="515" max-vertical-offset="1083">
+          <caret line="36" column="36" selection-start-line="36" selection-start-column="36" selection-end-line="36" selection-end-column="36" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testRunner/runner4.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-4.142857" vertical-offset="625" max-vertical-offset="2337">
+          <caret line="39" column="28" selection-start-line="39" selection-start-column="28" selection-end-line="39" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Common/reportPhone.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.97602737" vertical-offset="0" max-vertical-offset="494">
+          <caret line="15" column="30" selection-start-line="15" selection-start-column="30" selection-end-line="15" selection-end-column="30" />
+          <folding>
+            <element signature="e#29#40#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

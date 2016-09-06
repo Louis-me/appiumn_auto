@@ -53,8 +53,6 @@ class BexceCase():
                 go.operate_element(k["operate_type"], k["element_type"], k["element_info"])
                 common.MEN.append(DAppPerformance.get_men(common.PACKAGE))
                 common.CPU.append(DAppPerformance.top_cpu(common.PACKAGE))
-
-
         # logTest = myLog.getLog()
         if go.findElement(elemt_by=ch_check["element_type"], element_info=ch_check["element_info"], type=ch_check["find_type"]):
             # logTest.resultOK(self.result["test_module"])
