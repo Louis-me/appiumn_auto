@@ -25,7 +25,9 @@ import math
 from Common import dataToString
 
 def get_email():
-    email = BgetEmail.read_email("D:\\app\\appium_study\\email.ini", Memail.email())
+    g_email = Memail.email()
+    g_email.file = "D:\\app\\appium_study\\email.ini"
+    email = BgetEmail.read_email(g_email)
     return email
 
 def get_app_basemsg(f=r"D:\app\appium_study\t1.apk"):

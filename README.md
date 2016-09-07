@@ -3,7 +3,7 @@
 * 基于python3
 * 基于app UI自动化，使用appium（可用于ios,和安卓）
 
-### 模块介绍
+### 2015-10-10 更新日志
 * testBaseOpreate 通用操作，比如简单点，执行操作，读取xml(yaml配置文件)
 * testCase 测试用例文件都放在这里
 * testData 测试的常用数据，如枚举数据
@@ -54,7 +54,7 @@
 
 * 新增结果展示,采用的是pyh拼接的方式来生成html报告
 
-![report.png](report.png "report.png")
+![report.png](img/report.png "report.png")
 
 
 ## 2016-7-24更新日志
@@ -132,11 +132,11 @@ execCase(r'D:\appium\testcase\home\home_more_adv.yaml', test_id="2004", test_int
 * 更新测试报告，用excel展示
 * 邮件发送测试报告
 
-![testReport.png](testReport.png "testReport.png")
+![testReport.png](img/testReport.png "testReport.png")
 
-![testReportDetail.png](testReportDetail.png "testReportDetail.png")
+![testReportDetail.png](img/testReportDetail.png "testReportDetail.png")
 
-![testEmail.png](testEmail.png "testMail.png")
+![testEmail.png](img/testEmail.png "testMail.png")
 
 # 2016-9-5
 * 三层架构重构整个系统，分为了model,dal,bll,common,testCase(主要编写用例),runner（入口）

@@ -1,6 +1,6 @@
 __author__ = 'Administrator'
 from schematics.models import Model
-from schematics.types import StringType,IntType
+from schematics.types import StringType, IntType
 from schematics.types.compound import ListType
 
 class email(Model):
@@ -12,3 +12,4 @@ class email(Model):
     headerMsg = StringType()
     attach = StringType()
     report = StringType()
+    file = StringType()
