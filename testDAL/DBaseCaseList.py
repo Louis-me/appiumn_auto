@@ -2,10 +2,8 @@ __author__ = 'Administrator'
 # -*- coding: utf-8 -*-
 import json
 
-from Common import getXMl
-from testDAL import DBaseOperateElement
+from Common import getXMl, appPerformance as ap, baseOperateElement as bo
 from Common.CoGlobal import *
-from testDAL import DAppPerformance
 # temp = getTempCase()
 class BexceCase():
     """
@@ -39,20 +37,19 @@ class BexceCase():
            # 验证类型
             self.BaseTestCase.find_type =gh[i].get("find_type", "false")
             bs.append(json.loads(json.dumps(self.BaseTestCase().to_primitive())))
-        print(bs)
         return bs
 
     def execCase(self, f, **kwargs):
 
         bc = self.getModeList(f)
-        go = DBaseOperateElement.getOperateElement(driver=common.DRIVER)
+        go = bo.getOperateElement(driver=common.DRIVER)
         ch_check = bc[-1]
         print(bc)
         for k in bc:
             if k["operate_type"] != "false":
                 go.operate_element(k["operate_type"], k["element_type"], k["element_info"])
-                common.MEN.append(DAppPerformance.get_men(common.PACKAGE))
-                common.CPU.append(DAppPerformance.top_cpu(common.PACKAGE))
+                common.MEN.append(ap.get_men(common.PACKAGE))
+                common.CPU.append(ap.top_cpu(common.PACKAGE))
         # logTest = myLog.getLog()
         if go.findElement(elemt_by=ch_check["element_type"], element_info=ch_check["element_info"], type=ch_check["find_type"]):
             # logTest.resultOK(self.result["test_module"])

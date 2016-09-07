@@ -1,9 +1,7 @@
 __author__ = 'shikun'
 # -*- coding: utf-8 -*-
 import subprocess
-cpu = []
-men = []
-# flow = [[],[]]
+# 常用的性能监控
 def top_cpu(pkg_name):
     result = 0
     cmd = "adb shell dumpsys cpuinfo | grep -w " + pkg_name+":"

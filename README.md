@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # 自动化测试平台
 ## 框架介绍
 * 基于python3
@@ -140,9 +139,12 @@ execCase(r'D:\appium\testcase\home\home_more_adv.yaml', test_id="2004", test_int
 ![testEmail.png](testEmail.png "testMail.png")
 
 # 2016-9-5
-* 三层架构重构整个系统
+* 三层架构重构整个系统，分为了model,dal,bll,common,testCase(主要编写用例),runner（入口）
 * 更新记录内存，cpu,平均和最大峰值情况
 
 # 2016-9-6
 * 修复计算内存错误
 * 优化代码解耦
+
+# 2016-8-7
+* 重构DAL调用DAL层问题，放到了common层里面去了

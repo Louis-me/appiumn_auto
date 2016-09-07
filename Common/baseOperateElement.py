@@ -2,7 +2,6 @@ __author__ = 'Administrator'
 # -*- coding: utf-8 -*-
 from selenium.webdriver.support.ui import WebDriverWait
 import selenium.common.exceptions
-from testDAL import DAppPerformance
 from Common.CoGlobal import *
 
 

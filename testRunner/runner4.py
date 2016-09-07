@@ -2,7 +2,6 @@ __author__ = 'Administrator'
 # -*- coding: utf-8 -*-
 import sys
 sys.path.append("..")
-# sys.path.append(os.path.join(os.path.dirname(__file__), "..", ".."))
 import datetime
 import xlsxwriter
 import time
@@ -23,6 +22,8 @@ from testBLL import Breport
 from testMode import Mreport
 from Common.CoGlobal import *
 import math
+from Common import dataToString
+
 def get_email():
     email = BgetEmail.read_email("D:\\app\\appium_study\\email.ini", Memail.email())
     return email
@@ -47,6 +48,9 @@ def phone_avg_max_use_cpus(cpu):
 
 def phone_raws(raw):
     return reportPhone.phone_raw(raw)
+
+def getDateStr(t_time, fromat):
+    return dataToString.getStrTime(t_time, fromat)
 
 def get_common_report(start_test_time, endtime, starttime):
     mreport = Mreport.report()
@@ -73,16 +77,10 @@ def get_common_report(start_test_time, endtime, starttime):
     mreport.phone_avg_max_use_cpu = phone_avg_max_use_cpus(common.CPU)
     mreport.app_version = appbase[2]
     mreport.test_date = start_test_time
-
     Breport.set_report(mreport)
-    # str(ceil(int(men_total)/1000)) + "M"
-
-
-
-
 
 def runnerCaseApp():
-    start_test_time = time.strftime("%Y-%m-%d %H:%M %p", time.localtime())
+    start_test_time = getDateStr(time.localtime(), "%Y-%m-%d %H:%M %p")
     suite = unittest.TestSuite()
     starttime = datetime.datetime.now()
     suite.addTest(TestInterfaceCase.parametrize(testHome))
