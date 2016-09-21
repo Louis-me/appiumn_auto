@@ -15,13 +15,16 @@ class common(object):
     CLICK = "click"
     DRIVER = ""
     TAP = "tap"
+
     FLAG = True
+
     RRPORT = {"info":[]}
     RESULT = {"info":[]}
     RESULT["test_module"] = "登陆模块1"
     SEND_KEYS = "send_keys"
     FIND_STR = "find_str"
     FIND = "find"
+
     test_sum = 0
     test_success = 0
     test_failed = 0
@@ -31,5 +34,12 @@ class common(object):
     CPU = []
     PACKAGE = ""
 
+   # 错误日志
+    ANR = "ANR"
+    I_ANR = 0
+    CRASH = "CRASH"
+    I_CRASH = 0
+    EXCEPTION = "Exception"
+    I_EXCEPTION = 0
 
 

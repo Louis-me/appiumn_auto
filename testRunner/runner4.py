@@ -7,8 +7,9 @@ import xlsxwriter
 import time
 import unittest
 from Common import reportPhone
-from testRunner.runner import ga, TestInterfaceCase
+from testRunner.runner import TestInterfaceCase,ga
 from testCase.home.Home import testHome
+from testCase.home.crash import testCrash
 from testCase.home.Home1 import testHome1
 from testBLL import BgetEmail
 from testBLL import BtestServer
@@ -22,7 +23,8 @@ from testBLL import Breport
 from testMode import Mreport
 from Common.CoGlobal import *
 import math
-from Common import dataToString
+from Common import dataToString, errorLog
+
 
 def get_email():
     g_email = Memail.email()
@@ -30,8 +32,8 @@ def get_email():
     email = BgetEmail.read_email(g_email)
     return email
 
-def get_app_basemsg(f=r"D:\app\appium_study\t1.apk"):
-    return BAppBaseMsg.apkInfo(f).get_app_basemsg()
+def get_app_basemsg(f=r"D:\app\appium_study\img\m.apk"):
+    return BAppBaseMsg.apkInfo(f).get_app_basemsg(ga.appPackage)
 
 def get_phone(log=r"d:\phone.txt"):
     return BappKernel.get_phone_kernel(log)
@@ -82,10 +84,12 @@ def get_common_report(start_test_time, endtime, starttime):
     Breport.set_report(mreport)
 
 def runnerCaseApp():
+
+    # errorLog.save_log(ga.appPackage) # 记录logcat运行日志
     start_test_time = getDateStr(time.localtime(), "%Y-%m-%d %H:%M %p")
     suite = unittest.TestSuite()
     starttime = datetime.datetime.now()
-    suite.addTest(TestInterfaceCase.parametrize(testHome))
+    suite.addTest(TestInterfaceCase.parametrize(testCrash))
     # suite.addTest(TestInterfaceCase.parametrize(testHome1))
     unittest.TextTestRunner(verbosity=2).run(suite)
     endtime = datetime.datetime.now()

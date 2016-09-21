@@ -3,7 +3,7 @@ __author__ = 'Administrator'
 from selenium.webdriver.support.ui import WebDriverWait
 import selenium.common.exceptions
 from Common.CoGlobal import *
-
+from Common import errorLog
 
 # 此脚本主要用于查找元素是否存在，操作页面元素
 class getOperateElement():
@@ -18,6 +18,7 @@ class getOperateElement():
         :return:
         '''
         if kwargs["type"] == common.FIND:
+            errorLog.get_error(log="d:\log.txt")
             try:
                 WebDriverWait(self.cts, 10).until(lambda x: elements_by(kwargs["elemt_by"], self.cts, kwargs["element_info"]))
                 return True
@@ -28,6 +29,8 @@ class getOperateElement():
                 return False
         if kwargs["type"] == common.FIND_STR:
             find_str(kwargs["elemt_by"], self.cts, kwargs["element_info"], kwargs["msg"])
+
+
     def operate_element(self, operate, elemen_by, element_info, *arg, **kwargs):
         '''
         所有的操作入口
@@ -50,6 +53,7 @@ class getOperateElement():
 # 点击事件
 def operate_click(elemen_by,cts,element_info):
     elements_by(elemen_by, cts, element_info).click()
+    errorLog.get_error(log="d:\log.txt")
 
 # 轻打x轴向右移动x单位，y轴向下移动y单位
 def operate_tap(elemen_by,cts,element_info, xy=[]):

@@ -4,13 +4,9 @@ import json
 
 from Common import getXMl, appPerformance as ap, baseOperateElement as bo
 from Common.CoGlobal import *
-# temp = getTempCase()
+from Common import testLog
 class BexceCase():
-    """
-    :param f: 读取用例文件位置
-    :param kwargs: test_id,test_intr,test_case,isLast
-    :return:
-    """
+
     def __init__(self, test_module="", getTempCase="", BaseTestCase=""):
         self.test_module = test_module
         self.getTempCase = getTempCase
@@ -44,33 +40,37 @@ class BexceCase():
         bc = self.getModeList(f)
         go = bo.getOperateElement(driver=common.DRIVER)
         ch_check = bc[-1]
-        print(bc)
         for k in bc:
             if k["operate_type"] != "false":
                 go.operate_element(k["operate_type"], k["element_type"], k["element_info"])
                 common.MEN.append(ap.get_men(common.PACKAGE))
                 common.CPU.append(ap.top_cpu(common.PACKAGE))
-        # logTest = myLog.getLog()
+        logTest = testLog.myLog().getLog()
         if go.findElement(elemt_by=ch_check["element_type"], element_info=ch_check["element_info"], type=ch_check["find_type"]):
-            # logTest.resultOK(self.result["test_module"])
             common.test_success += 1
             self.getTempCase.test_result = "成功"
+            logTest.resultOK(kwargs["test_name"])
         else:
-            # logTest.resultNG(self.result["test_module"])
+            # logTest.screenshotNG(common.DRIVER, kwargs["test_name"])
+            logTest.checkPointNG(common.DRIVER, kwargs["test_name"], kwargs["test_name"])
             common.test_failed += 1
+            test_reason = "检查不到元素"
+            # if common.I_ANR > 0:
+            #     test_reason = "有ANR错误"
+            # if common.I_CRASH > 0:
+            #     test_reason = "有CRASH错误"
+            # if common.I_EXCEPTION > 0:
+            #     test_reason = "有EXCEPTION错误"
             self.getTempCase.test_result = "失败"
-            self.getTempCase.test_reason = "扩展"
-
+            self.getTempCase.test_reason = test_reason
 
         self.getTempCase.test_name =kwargs["test_name"]
         self.getTempCase.test_module = self.test_module
         common.test_sum += 1
-
         common.RESULT["info"].append(json.loads(json.dumps(self.getTempCase().to_primitive())))
         if kwargs["isLast"] == "1":
         # 最后case要写最下面的统计步骤
             common.RRPORT["info"].append(common.RESULT["info"])
-# getModeList(r"D:\appium\testcase\myinfo\login.yaml")
 
 
 

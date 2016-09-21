@@ -8,7 +8,7 @@ from testBLL import BAppDevices
 
 def appDevices():
     mapp = MAppDevices.getDriver()
-    return BAppDevices.appDevices(mapp, r"D:\app\appium_study\AppDevices.ini")
+    return BAppDevices.appDevices(mapp)
 ga = appDevices()
 class TestInterfaceCase(unittest.TestCase):
     def __init__(self, methodName='runTest'):

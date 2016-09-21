@@ -12,8 +12,8 @@ class apkInfo():
         size = floor(os.path.getsize(self.apkpath)/(1024*1000))
         return str(size) + "M"
     # 得到版本
-    def get_apk_version(self):
-        cmd = "aapt dump badging " + self.apkpath + " | grep package"
+    def get_apk_version(self, pag):
+        cmd = "aapt dump badging " + self.apkpath + " | grep " + pag
         return self.get_apk_info(cmd, 62, -30)
 
     #得到应用名字
@@ -32,10 +32,10 @@ class apkInfo():
             result = output[start:end]
         return result.decode()
 
-    def get_app_basemsg(self):
+    def get_app_basemsg(self, pag):
         apk_name = self.get_apk_name() # app名字
         apk_siz = self.get_apk_size() # app大小
-        apk_version = self.get_apk_version() # app版本
+        apk_version = self.get_apk_version(pag) # app版本
         return apk_name, apk_siz, apk_version
 
 # COMMOND1 = "aapt dump badging "
