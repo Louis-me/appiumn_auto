@@ -67,6 +67,7 @@ class BexceCase():
         self.getTempCase.test_name =kwargs["test_name"]
         self.getTempCase.test_module = self.test_module
         common.test_sum += 1
+        print(self.getTempCase().to_primitive())
         common.RESULT["info"].append(json.loads(json.dumps(self.getTempCase().to_primitive())))
         if kwargs["isLast"] == "1":
         # 最后case要写最下面的统计步骤

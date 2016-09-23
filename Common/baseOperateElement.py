@@ -18,7 +18,7 @@ class getOperateElement():
         :return:
         '''
         if kwargs["type"] == common.FIND:
-            errorLog.get_error(log="d:\log.txt")
+            # errorLog.get_error(log=r"d:\find_log.txt")
             try:
                 WebDriverWait(self.cts, 10).until(lambda x: elements_by(kwargs["elemt_by"], self.cts, kwargs["element_info"]))
                 return True
@@ -46,14 +46,12 @@ class getOperateElement():
             common.TAP: lambda: operate_tap(elemen_by, self.cts, element_info, arg),
             common.SEND_KEYS: lambda: send_keys(elemen_by, self.cts, element_info, kwargs)
         }
-        # 监控性能信息
-
         return elements[operate]()
 
 # 点击事件
 def operate_click(elemen_by,cts,element_info):
     elements_by(elemen_by, cts, element_info).click()
-    errorLog.get_error(log="d:\log.txt")
+    errorLog.get_error(log=r"d:\operate_log.txt")
 
 # 轻打x轴向右移动x单位，y轴向下移动y单位
 def operate_tap(elemen_by,cts,element_info, xy=[]):

@@ -18,4 +18,4 @@ class testCrash(unittest.TestCase):
     def test_crase1(self):
         self.bc.execCase(r'D:\appium\testcase\home\home_crash.yaml', test_name="test_crase1", isLast="0")
     def test_crase2(self):
-        self.bc.execCase(r'D:\appium\testcase\home\home_info.yaml', test_name="test_crase1", isLast="1")
+        self.bc.execCase(r'D:\appium\testcase\home\home_info.yaml', test_name="test_crase2", isLast="1")
