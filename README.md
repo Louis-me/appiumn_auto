@@ -156,3 +156,9 @@ execCase(r'D:\appium\testcase\home\home_more_adv.yaml', test_id="2004", test_int
 * 新增执行case失败后，截图到本地
 * 新增操作和检查点的运行日志
 * 后续优化记录日志和报告生成问题
+
+# 2016-10-24 更新日志
+
+* 编写配置[case的api](https://github.com/284772894/appiumn_auto/blob/master/mark.md)
+* 优化对每个操作步骤实行智能查找元素，如果元素不存在，截图记录错误日志
+* 对xpath,左滑动，tag_name,clas_name的支持

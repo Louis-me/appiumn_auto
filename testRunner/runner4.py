@@ -32,7 +32,7 @@ def get_email():
     email = BgetEmail.read_email(g_email)
     return email
 
-def get_app_basemsg(f=r"D:\app\appium_study\img\m.apk"):
+def get_app_basemsg(f=r"D:\app\appium_study\img\t.apk"):
     return BAppBaseMsg.apkInfo(f).get_app_basemsg(ga.appPackage)
 
 def get_phone(log=r"d:\phone.txt"):
@@ -89,23 +89,25 @@ def runnerCaseApp():
     start_test_time = getDateStr(time.localtime(), "%Y-%m-%d %H:%M %p")
     suite = unittest.TestSuite()
     starttime = datetime.datetime.now()
-    suite.addTest(TestInterfaceCase.parametrize(testCrash))
-    # suite.addTest(TestInterfaceCase.parametrize(testHome1))
+    # suite.addTest(TestInterfaceCase.parametrize(testCrash))
+    # test1 = testHome1(TestInterfaceCase)
+
+    suite.addTest(TestInterfaceCase.parametrize(testHome1))
     unittest.TextTestRunner(verbosity=2).run(suite)
     endtime = datetime.datetime.now()
-    get_common_report(start_test_time, endtime, starttime)
+    # get_common_report(start_test_time, endtime, starttime)
 
-def report(appium_server):
+def report():
     workbook = xlsxwriter.Workbook('report.xlsx')
     worksheet = workbook.add_worksheet("测试总况")
     worksheet2 = workbook.add_worksheet("测试详情")
     print(common.RRPORT)
     bc = BExcelReport.sendReport(wd=workbook, data=common.RRPORT)
-    bc.init(worksheet)
-    bc.detail(worksheet2)
-    bc.close()
+    # bc.init(worksheet)
+    # bc.detail(worksheet2)
+    # bc.close()
     # BsendEmail.send_mail(get_email())
-    appium_server.stop_server()
+    # appium_server.stop_server()
 
 if __name__ == '__main__':
     if BAdbCommon.attached_devices():
@@ -113,9 +115,9 @@ if __name__ == '__main__':
             appium_server = BtestServer.AppiumServer(ga.appiumJs, ga.Remote)
             appium_server.start_server()
             while not appium_server.is_runnnig():
-                time.sleep(1)
+                time.sleep(2)
             runnerCaseApp()
             appium_server.stop_server()
-            report(appium_server)
+            report()
     else:
         print(u"设备不存在")

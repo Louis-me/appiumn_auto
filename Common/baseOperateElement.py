@@ -3,35 +3,36 @@ __author__ = 'Administrator'
 from selenium.webdriver.support.ui import WebDriverWait
 import selenium.common.exceptions
 from Common.CoGlobal import *
+import time
 from Common import errorLog
 
 # 此脚本主要用于查找元素是否存在，操作页面元素
 class getOperateElement():
     def __init__(self, driver=""):
         self.cts = driver
-    # def findElement(self, elemt_by, element_info,msg=None):
-    def findElement(self, **kwargs):
+    def findElement(self, mOperate):
         '''
         查找元素
         :param elemt_by:   查找类型,id,xpath等
         :param element_info: 具体元素参数，如xpath的值，id的值
         :return:
         '''
-        if kwargs["type"] == common.FIND:
-            # errorLog.get_error(log=r"d:\find_log.txt")
-            try:
-                WebDriverWait(self.cts, 10).until(lambda x: elements_by(kwargs["elemt_by"], self.cts, kwargs["element_info"]))
-                return True
-            except selenium.common.exceptions.TimeoutException:
-                return False
-            except selenium.common.exceptions.NoSuchElementException:
-                print("找不到数据")
-                return False
-        if kwargs["type"] == common.FIND_STR:
-            find_str(kwargs["elemt_by"], self.cts, kwargs["element_info"], kwargs["msg"])
 
 
-    def operate_element(self, operate, elemen_by, element_info, *arg, **kwargs):
+        try:
+            WebDriverWait(self.cts, common.WAIT_TIME).until(lambda x: elements_by(mOperate, self.cts))
+            return True
+        except selenium.common.exceptions.TimeoutException:
+            return False
+        except selenium.common.exceptions.NoSuchElementException:
+            print("找不到数据")
+            return False
+
+        # if mOperate["type"] == common.FIND_NAME_INDEX:
+        #     find_str(mOperate["elemt_by"], self.cts, mOperate["element_info"], mOperate["text"])
+
+
+    def operate_element(self,  mOperate):
         '''
         所有的操作入口
         :param operate: 操作对应common中的click,tap等
@@ -41,37 +42,60 @@ class getOperateElement():
         :param kwargs: 主要传dict
         :return:
         '''
-        elements = {
-            common.CLICK: lambda: operate_click(elemen_by, self.cts, element_info),
-            common.TAP: lambda: operate_tap(elemen_by, self.cts, element_info, arg),
-            common.SEND_KEYS: lambda: send_keys(elemen_by, self.cts, element_info, kwargs)
-        }
-        return elements[operate]()
+        if self.findElement(mOperate):
+            elements = {
+                common.CLICK: lambda: operate_click(mOperate, self.cts),
+                # common.TAP: lambda: operate_tap(mOperate["find_type"], self.cts,  mOperate["element_info"], arg),
+                common.SEND_KEYS: lambda: send_keys(mOperate, self.cts),
+                common.SWIPELEFT: lambda : opreate_swipe_left(mOperate, self.cts)
+
+            }
+            return elements[mOperate["operate_type"]]()
+        return False
 
 # 点击事件
-def operate_click(elemen_by,cts,element_info):
-    elements_by(elemen_by, cts, element_info).click()
-    errorLog.get_error(log=r"d:\operate_log.txt")
+def operate_click(mOperate,cts):
+    if mOperate["find_type"] == common.find_element_by_id or mOperate["find_type"] == common.find_element_by_name or mOperate["find_type"] == common.find_element_by_xpath:
+        elements_by(mOperate, cts).click()
+    if mOperate["find_type"] == common.find_elements_by_id or mOperate["find_type"] == common.find_elements_by_name:
+        elements_by(mOperate, cts)[mOperate["index"]].click()
+
+    # errorLog.get_error(log=r"d:\operate_log.txt")
+
+def opreate_swipe_left(mOperate, cts):
+    time.sleep(2)
+    width = cts.get_window_size()["width"]
+    height = cts.get_window_size()["height"]
+    for i in range(mOperate["time"]):
+        cts.swipe(width/4*3, height / 2, width / 4 *1, height / 2, 500)
+        time.sleep(2)
+# start_x,start_y,end_x,end_y
 
 # 轻打x轴向右移动x单位，y轴向下移动y单位
-def operate_tap(elemen_by,cts,element_info, xy=[]):
-    elements_by(elemen_by, cts, element_info).tap(x=xy[0], y=xy[1])
+# def operate_tap(elemen_by,cts,element_info, xy=[]):
+#     elements_by(elemen_by, cts, element_info).tap(x=xy[0], y=xy[1])
 
-def send_keys(elemen_by,cts,element_info, kwargs):
+def send_keys(mOperate,cts):
+    elements_by(mOperate, cts).send_keys(mOperate["text"])
 
-    elements_by(elemen_by, cts, element_info).send_keys(kwargs["msg"])
+# # common.FIND_STR: lambda: find_str(elements_by, kwargs["msg"])
+# def find_str(elements_by,cts,element_info, msg):
+#    # return ex_str.find(msg)
+#    result = elements_by(elements_by, cts, element_info).text().find(msg)
+#    return result
 
-# common.FIND_STR: lambda: find_str(elements_by, kwargs["msg"])
-def find_str(elements_by,cts,element_info, msg):
-   # return ex_str.find(msg)
-   result = elements_by(elements_by, cts, element_info).text().find(msg)
-   return result
 
-# 封装常用的find标签
-def elements_by(types, cts, element_info, msg=None):
+
+# 封装常用的标签
+def elements_by(mOperate, cts):
     elements = {
-        common.ID : lambda :cts.find_element_by_id(element_info),
-        common.XPATH: lambda :cts.find_element_by_xpath(element_info),
-        common.NAME: lambda :cts.find_element_by_name(msg)
+
+        common.find_element_by_id : lambda :cts.find_element_by_id(mOperate["element_info"]),
+        common.find_elements_by_id : lambda :cts.find_elements_by_id(mOperate["element_info"]),
+        common.find_element_by_xpath: lambda :cts.find_element_by_xpath(mOperate["element_info"]),
+        common.find_element_by_name: lambda :cts.find_element_by_name(mOperate['name']),
+        common.find_elements_by_name: lambda :cts.find_elements_by_name(mOperate['name'])[mOperate['index']],
+        common.find_element_by_class_name: lambda :cts.find_element_by_class_name(mOperate['element_info']),
+        common.find_elements_by_class_name: lambda :cts.find_elements_by_class_name(mOperate['element_info'])[mOperate['index']]
     }
-    return elements[types]()
+    return elements[mOperate["find_type"]]()

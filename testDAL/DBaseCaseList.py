@@ -22,31 +22,39 @@ class BexceCase():
                  # 用例介绍
                 self.getTempCase.test_intr = gh[i].get("test_intr", "false")
             # bt = self.BaseTestCase
-            self.BaseTestCase.element_info = gh[i]["element_info"]
+            self.BaseTestCase.element_info = gh[i].get("element_info", "false")
 
           # 操作类型
             self.BaseTestCase.operate_type = gh[i].get("operate_type", "false")
-            self.BaseTestCase.element_type = gh[i]["findElemtType"]
             # 输入文字
-            self.BaseTestCase.msg = gh[i].get("msg", "false")
+            self.BaseTestCase.name = gh[i].get("name", "false")
+
+            self.BaseTestCase.index = gh[i].get("index", "false")
+
+            self.BaseTestCase.text = gh[i].get("text", "false") # 对应by_link_text
 
            # 验证类型
-            self.BaseTestCase.find_type =gh[i].get("find_type", "false")
+            self.BaseTestCase.find_type = gh[i].get("find_type", "false")
+
+            self.BaseTestCase.time = gh[i].get("time", 0)
+
             bs.append(json.loads(json.dumps(self.BaseTestCase().to_primitive())))
         return bs
 
     def execCase(self, f, **kwargs):
-
+        logTest = testLog.myLog().getLog()
         bc = self.getModeList(f)
         go = bo.getOperateElement(driver=common.DRIVER)
         ch_check = bc[-1]
         for k in bc:
             if k["operate_type"] != "false":
-                go.operate_element(k["operate_type"], k["element_type"], k["element_info"])
-                common.MEN.append(ap.get_men(common.PACKAGE))
-                common.CPU.append(ap.top_cpu(common.PACKAGE))
-        logTest = testLog.myLog().getLog()
-        if go.findElement(elemt_by=ch_check["element_type"], element_info=ch_check["element_info"], type=ch_check["find_type"]):
+                # go.operate_element(k["operate_type"], k["element_type"], k["element_info"])
+                if go.operate_element(k)== False:
+                     logTest.checkPointNG(common.DRIVER, kwargs["test_name"], kwargs["test_name"])
+                     logTest.resultNG(kwargs["test_name"], "找不页面元素")
+                    # common.MEN.append(ap.get_men(common.PACKAGE))
+                    # common.CPU.append(ap.top_cpu(common.PACKAGE))
+        if go.findElement(ch_check):
             common.test_success += 1
             self.getTempCase.test_result = "成功"
             logTest.resultOK(kwargs["test_name"])
@@ -67,7 +75,6 @@ class BexceCase():
         self.getTempCase.test_name =kwargs["test_name"]
         self.getTempCase.test_module = self.test_module
         common.test_sum += 1
-        print(self.getTempCase().to_primitive())
         common.RESULT["info"].append(json.loads(json.dumps(self.getTempCase().to_primitive())))
         if kwargs["isLast"] == "1":
         # 最后case要写最下面的统计步骤

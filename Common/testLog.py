@@ -69,8 +69,8 @@ class Log:
     def resultOK(self, caseNo):
         self.writeResult(caseNo+": OK")
 
-    def resultNG(self, caseNo):
-        self.writeResult(caseNo+": NG")
+    def resultNG(self, caseNo, reason):
+        self.writeResult(caseNo+": NG--" + reason)
 
     def checkPointOK(self, driver,caseName, checkPoint):
         """write the case's checkPoint(OK)
@@ -111,8 +111,6 @@ class Log:
 
         # wait for animations to complete before taking screenshot
         sleep(1)
-        print(screenshotPath)
-        print(screenshotName)
         # driver.get_screenshot_as_file(os.path.join(screenshotPath, screenshotName))
         driver.get_screenshot_as_file(os.path.join(screenshotPath+screenshotName))
 
