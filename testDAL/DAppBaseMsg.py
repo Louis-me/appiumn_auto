@@ -32,10 +32,11 @@ class apkInfo():
             result = output[start:end]
         return result.decode()
 
-    def get_app_basemsg(self, pag):
+    def get_app_basemsg(self):
         apk_name = self.get_apk_name() # app名字
         apk_siz = self.get_apk_size() # app大小
-        apk_version = self.get_apk_version(pag) # app版本
+        apk_version = self.get_apk_version("versionName") # app版本
+        # print(apk_version)
         return apk_name, apk_siz, apk_version
 
 # COMMOND1 = "aapt dump badging "
@@ -45,7 +46,7 @@ class apkInfo():
 # commond1 = COMMOND1+apk_path+COMMOND3
 # commond2 = COMMOND1+apk_path+COMMOND2
 #
-# # get_apk_info(commond1, 62, -30) # 版本
+# apkInfo(r"D:\app\appium_study\img\t.apk").get_app_basemsg() # 版本
 # # get_apk_info(commond, 62, -30) 大小
 # # get_apk_info(commond2, 19, -2) #项目名称
 

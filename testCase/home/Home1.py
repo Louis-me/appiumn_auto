@@ -17,8 +17,8 @@ class testHome1(TestInterfaceCase):
     def home_feed(self):
         self.bc.execCase(r'D:\appium\testcase\home\home_feed.yaml', test_name="test_home_feed", isLast="1")
     def test_home(self):
-        # self.home_fist_open()
-        # self.home_login()
+        self.home_fist_open()
+        self.home_login()
         self.home_feed()
 
     # def test_home_shopcart(self):

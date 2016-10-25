@@ -48,12 +48,11 @@ class BexceCase():
         ch_check = bc[-1]
         for k in bc:
             if k["operate_type"] != "false":
-                # go.operate_element(k["operate_type"], k["element_type"], k["element_info"])
                 if go.operate_element(k)== False:
                      logTest.checkPointNG(common.DRIVER, kwargs["test_name"], kwargs["test_name"])
                      logTest.resultNG(kwargs["test_name"], "找不页面元素")
-                    # common.MEN.append(ap.get_men(common.PACKAGE))
-                    # common.CPU.append(ap.top_cpu(common.PACKAGE))
+                common.MEN.append(ap.get_men(common.PACKAGE))
+                common.CPU.append(ap.top_cpu(common.PACKAGE))
         if go.findElement(ch_check):
             common.test_success += 1
             self.getTempCase.test_result = "成功"

@@ -12,7 +12,7 @@ PATH = lambda p: os.path.abspath(
 )
 def appDevices():
     mapp = MAppDevices.getDriver()
-    return BAppDevices.appDevices(mapp)
+    return BAppDevices.appDevices(mapp, PATH("../AppDevices.ini"))
 ga = appDevices()
 class TestInterfaceCase(unittest.TestCase):
     def __init__(self, methodName='runTest'):
@@ -27,9 +27,9 @@ class TestInterfaceCase(unittest.TestCase):
             desired_caps['deviceName'] = ga.deviceName
             desired_caps['appPackage'] = ga.appPackage
             desired_caps['appActivity'] = ga.appActivity
-        #     desired_caps['app'] = PATH(
-        #     '../img/t.apk'
-        # )
+            desired_caps['app'] = PATH(
+            '../img/t.apk'
+        )
         #     desired_caps["unicodeKeyboard"] = "True"
         #     desired_caps["resetKeyboard"] = "True"
             common.PACKAGE = ga.appPackage

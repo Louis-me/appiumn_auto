@@ -24,16 +24,18 @@ from testMode import Mreport
 from Common.CoGlobal import *
 import math
 from Common import dataToString, errorLog
-
-
+import os
+PATH = lambda p: os.path.abspath(
+    os.path.join(os.path.dirname(__file__), p)
+)
 def get_email():
     g_email = Memail.email()
-    g_email.file = "D:\\app\\appium_study\\email.ini"
+    g_email.file = PATH( '../email.ini' )
     email = BgetEmail.read_email(g_email)
     return email
 
 def get_app_basemsg(f=r"D:\app\appium_study\img\t.apk"):
-    return BAppBaseMsg.apkInfo(f).get_app_basemsg(ga.appPackage)
+    return BAppBaseMsg.apkInfo(f).get_app_basemsg()
 
 def get_phone(log=r"d:\phone.txt"):
     return BappKernel.get_phone_kernel(log)
@@ -60,11 +62,11 @@ def get_common_report(start_test_time, endtime, starttime):
     mreport = Mreport.report()
     g_phone = get_phone()
     raw = g_phone[1]/1024
-    appbase = get_app_basemsg()
+    appbase = get_app_basemsg(PATH( '../img/t.apk'))
     mreport.test_sum = common.test_sum
     mreport.test_failed = common.test_failed
     mreport.test_success = common.test_success
-    mreport.test_sum_date = str((endtime - starttime).seconds)
+    mreport.test_sum_date = str((endtime - starttime).seconds-6) +"秒"
     mreport.app_name = appbase[0]
     mreport.app_size = appbase[1]
     mreport.phone_name = g_phone[0]["phone_name"] +" " +g_phone[0]["phone_model"]
@@ -85,17 +87,15 @@ def get_common_report(start_test_time, endtime, starttime):
 
 def runnerCaseApp():
 
-    # errorLog.save_log(ga.appPackage) # 记录logcat运行日志
     start_test_time = getDateStr(time.localtime(), "%Y-%m-%d %H:%M %p")
     suite = unittest.TestSuite()
     starttime = datetime.datetime.now()
     # suite.addTest(TestInterfaceCase.parametrize(testCrash))
     # test1 = testHome1(TestInterfaceCase)
-
     suite.addTest(TestInterfaceCase.parametrize(testHome1))
     unittest.TextTestRunner(verbosity=2).run(suite)
     endtime = datetime.datetime.now()
-    # get_common_report(start_test_time, endtime, starttime)
+    get_common_report(start_test_time, endtime, starttime)
 
 def report():
     workbook = xlsxwriter.Workbook('report.xlsx')
@@ -103,11 +103,11 @@ def report():
     worksheet2 = workbook.add_worksheet("测试详情")
     print(common.RRPORT)
     bc = BExcelReport.sendReport(wd=workbook, data=common.RRPORT)
-    # bc.init(worksheet)
-    # bc.detail(worksheet2)
-    # bc.close()
-    # BsendEmail.send_mail(get_email())
-    # appium_server.stop_server()
+    bc.init(worksheet)
+    bc.detail(worksheet2)
+    bc.close()
+    BsendEmail.send_mail(get_email())
+    appium_server.stop_server()
 
 if __name__ == '__main__':
     if BAdbCommon.attached_devices():
