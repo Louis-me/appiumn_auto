@@ -21,3 +21,5 @@ class report(Model):
     phone_avg_max_use_cpu = StringType() # cpu最大使用情况
     app_version = StringType() # app的版本
     test_date = StringType() # 测试的日期
+    fps_max = StringType() # fps最大值
+    fps_avg = StringType() # fps平均值

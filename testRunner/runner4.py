@@ -58,6 +58,12 @@ def phone_raws(raw):
 def getDateStr(t_time, fromat):
     return dataToString.getStrTime(t_time, fromat)
 
+def fps_max(d_fps):
+    return reportPhone.fps_max(d_fps)
+
+def fps_avg(d_fps):
+    return reportPhone.fps_avg(d_fps)
+
 def get_common_report(start_test_time, endtime, starttime):
     mreport = Mreport.report()
     g_phone = get_phone()
@@ -83,6 +89,8 @@ def get_common_report(start_test_time, endtime, starttime):
     mreport.phone_avg_max_use_cpu = phone_avg_max_use_cpus(common.CPU)
     mreport.app_version = appbase[2]
     mreport.test_date = start_test_time
+    mreport.fps_max = fps_max(common.FPS)
+    mreport.fps_avg = fps_avg(common.FPS)
     Breport.set_report(mreport)
 
 def runnerCaseApp():
@@ -106,7 +114,7 @@ def report():
     bc.init(worksheet)
     bc.detail(worksheet2)
     bc.close()
-    BsendEmail.send_mail(get_email())
+    # BsendEmail.send_mail(get_email())
     appium_server.stop_server()
 
 if __name__ == '__main__':

@@ -167,3 +167,6 @@ execCase(r'D:\appium\testcase\home\home_more_adv.yaml', test_id="2004", test_int
 
 * 调试对每个操作case的性能信息监控
 * 优化代码PATH相对路径的使用
+
+# 2016-10-26 更新日志
+* 新增总统计FPS的支持

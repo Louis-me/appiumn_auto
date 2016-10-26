@@ -74,23 +74,30 @@ class sendReport:
         worksheet.set_row(10, 30)
         worksheet.set_row(11, 30)
         worksheet.set_row(12, 30)
+        worksheet.set_row(13, 30)
 
         _write_center(worksheet, "A10", "手机名字", self.wd)
         _write_center(worksheet, "A11", "手机分辨率", self.wd)
         _write_center(worksheet, "A12", "手机系统", self.wd)
+        _write_center(worksheet, "A13", "FPS均值", self.wd)
 
         _write_center(worksheet, "B10", self.data['phone_name'], self.wd)
         _write_center(worksheet, "B11", self.data['phone_pix'], self.wd)
         _write_center(worksheet, "B12", self.data['phone_rel'], self.wd)
+        _write_center(worksheet, "B13", self.data['fps_avg'], self.wd)
 
 
         _write_center(worksheet, "C10", "运行内存", self.wd)
         _write_center(worksheet, "C11", "内存占用均值", self.wd)
         _write_center(worksheet, "C12", "内存占用峰值", self.wd)
 
+        _write_center(worksheet, "C13", "FPS峰值", self.wd)
+
         _write_center(worksheet, "D10",  self.data['phone_raw'], self.wd)
         _write_center(worksheet, "D11",  self.data['phone_avg_use_raw'], self.wd)
         _write_center(worksheet, "D12",  self.data['phone_max_use_raw'], self.wd)
+
+        _write_center(worksheet, "D13",  self.data['fps_max'], self.wd)
 
         _write_center(worksheet, "E10", "CPU", self.wd)
         _write_center(worksheet, "E11", "CPU占用均值", self.wd)

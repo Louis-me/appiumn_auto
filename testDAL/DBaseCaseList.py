@@ -53,6 +53,7 @@ class BexceCase():
                      logTest.resultNG(kwargs["test_name"], "找不页面元素")
                 common.MEN.append(ap.get_men(common.PACKAGE))
                 common.CPU.append(ap.top_cpu(common.PACKAGE))
+                common.FPS.append(ap.get_fps(common.PACKAGE))
         if go.findElement(ch_check):
             common.test_success += 1
             self.getTempCase.test_result = "成功"

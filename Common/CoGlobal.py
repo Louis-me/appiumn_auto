@@ -45,7 +45,7 @@ class common(object):
     MEN = []
     CPU = []
     PACKAGE = ""
-
+    FPS = []
    # 错误日志
     ANR = "ANR"
     I_ANR = 0
@@ -54,6 +54,6 @@ class common(object):
     EXCEPTION = "Exception"
     I_EXCEPTION = 0
 
-    WAIT_TIME = 10
+    WAIT_TIME = 5
 
 

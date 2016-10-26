@@ -19,3 +19,5 @@ def set_report(mreport):
     common.RRPORT["phone_avg_max_use_cpu"] = mreport.phone_avg_max_use_cpu
     common.RRPORT["app_version"] = mreport.app_version
     common.RRPORT["test_date"] = mreport.test_date
+    common.RRPORT["fps_avg"] = mreport.fps_avg
+    common.RRPORT["fps_max"] = mreport.fps_max
