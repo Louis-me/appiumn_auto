@@ -4,15 +4,14 @@
 * 基于app UI自动化，使用appium（可用于ios,和安卓）
 
 ### 2015-10-10 更新日志
-* testBaseOpreate 通用操作，比如简单点，执行操作，读取xml(yaml配置文件)
-* testCase 测试用例文件都放在这里
-* testData 测试的常用数据，如枚举数据
-* testMode 测试实体类
-* testSetting测试框架的常用设置
-* testRunner 测试运行 runner.py入口
-* testReport 结果展示
-	* 打算用pyh手动拼接html页面的方式
-	* 测试结果导出成 Junit 格式的 xml 文件，然后用其他工具生产
+*  Common 主要放一些全局变量，其他公用方法
+*  img 主要放一些图片，测试的app文件
+*  testBLL  三层
+*  testDAL 三层
+*  testModel 三层
+*  testRunner 
+  *  一个抽象入口，主要管理整个框架的setUpClass,tearDownClass，以及parametrize
+  * 一个是真正的入口，调用抽象入口
 	
 
 ## 2015-11-10 更新日志
