@@ -94,7 +94,6 @@ class BexceCase():
 
         self.getTempCase.test_men_max = rp.phone_max_use_raw(self.men)
         avg_men = ba.get_avg_raw(self.men)  # 获取每次占用内存多少
-         # reportPhone.phone_avg_use_raw(avg_men)
         self.getTempCase.test_men_avg = avg_men
         self.getTempCase.test_cpu_max = rp.phone_avg_max_use_cpu(self.cpu)
         self.getTempCase.test_cpu_avg = rp.phone_avg_use_cpu(self.cpu)

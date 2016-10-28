@@ -1,7 +1,6 @@
 __author__ = 'Administrator'
 # -*- coding: utf-8 -*-
 from testDAL import DBaseCaseList
-
 class BexceCase():
     def __init__(self, test_module="", getTempCase="", BaseTestCase="",fps=[], cpu=[], men=[]):
         self.test_module = test_module

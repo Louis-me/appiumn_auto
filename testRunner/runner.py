@@ -35,20 +35,16 @@ class TestInterfaceCase(unittest.TestCase):
             #     desired_caps["resetKeyboard"] = "True"
                 common.PACKAGE = ga.appPackage
                 driver = webdriver.Remote(ga.Remote, desired_caps)
-                print("FLAG_setUpClass")
                 print(common.FLAG)
                 common.DRIVER = driver
                 common.FLAG = False
     def setUp(self):
-        print("FLAG_setUp")
-        print(common.FLAG)
-
+        print("setUp")
     @staticmethod
     def tearDownClass():
         # driver.close_app()
         # driver.quit()
         print('tearDownClass')
-
     @staticmethod
     def parametrize(testcase_klass):
         testloader = unittest.TestLoader()

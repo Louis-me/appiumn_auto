@@ -18,6 +18,7 @@ def top_cpu(pkg_name):
             result = int(i.split("%")[0])
     return result
 
+# 得到men的使用情况
 def get_men(pkg_name):
     result = "0"
     cmd = "adb shell  dumpsys  meminfo %s"  %(pkg_name)
@@ -32,12 +33,13 @@ def get_men(pkg_name):
         break
     return int(result.decode())
 
+# 得到fps
 def get_fps(pkg_name):
     _adb = "adb shell dumpsys gfxinfo %s | grep -A 128 'Execute'  | grep -v '[a-Z]' "%pkg_name
     result = os.popen(_adb).read().strip()
     result = result.split('\r\n')
-    r_result = [] # 总值
-    t_result = [] # draw,Process,Execute分别的值
+    # r_result = [] # 总值
+    # t_result = [] # draw,Process,Execute分别的值
     # f_sum = 0
     for i in result:
         l_result = i.split('\t')[-3:]
