@@ -8,22 +8,19 @@ import time
 import unittest
 from Common import reportPhone
 from testRunner.runner import TestInterfaceCase,ga
-from testCase.home.Home import testHome
-from testCase.home.crash import testCrash
-from testCase.home.Home1 import testHome1
+from testCase.Home import testHome
+from testCase.work import testContact
 from testBLL import BgetEmail
 from testBLL import BtestServer
 from testBLL import BAdbCommon
 from testMode import Memail
-from testBLL import BsendEmail
 from testBLL import BExcelReport
 from testBLL import BappKernel
 from testBLL import BAppBaseMsg
 from testBLL import Breport
 from testMode import Mreport
 from Common.CoGlobal import *
-import math
-from Common import dataToString, errorLog
+from Common import dataToString
 import os
 PATH = lambda p: os.path.abspath(
     os.path.join(os.path.dirname(__file__), p)
@@ -36,38 +33,11 @@ def get_email():
 
 def get_app_basemsg(f=r"D:\app\appium_study\img\t.apk"):
     return BAppBaseMsg.apkInfo(f).get_app_basemsg()
-
-def get_phone(log=r"d:\phone.txt"):
-    return BappKernel.get_phone_kernel(log)
-
-def phone_avg_use_cpus(cpu):
-    return reportPhone.phone_avg_use_cpu(cpu)
-
-def phone_avg_use_raws(men):
-    return reportPhone.phone_avg_use_raw(men)
-
-def phone_max_use_raws(men):
-   return reportPhone.phone_max_use_raw(men)
-
-def phone_avg_max_use_cpus(cpu):
-    return reportPhone.phone_avg_max_use_cpu(cpu)
-
-def phone_raws(raw):
-    return reportPhone.phone_raw(raw)
-
-def getDateStr(t_time, fromat):
-    return dataToString.getStrTime(t_time, fromat)
-
-def fps_max(d_fps):
-    return reportPhone.fps_max(d_fps)
-
-def fps_avg(d_fps):
-    return reportPhone.fps_avg(d_fps)
-
 def get_common_report(start_test_time, endtime, starttime):
     mreport = Mreport.report()
-    g_phone = get_phone()
-    raw = g_phone[1]/1024
+
+    BappK = BappKernel.getPhoneMsg()
+    raw = BappKernel.get_men_total(r"d:\men.log")
     appbase = get_app_basemsg(PATH( '../img/t.apk'))
     mreport.test_sum = common.test_sum
     mreport.test_failed = common.test_failed
@@ -75,36 +45,35 @@ def get_common_report(start_test_time, endtime, starttime):
     mreport.test_sum_date = str((endtime - starttime).seconds-6) +"秒"
     mreport.app_name = appbase[0]
     mreport.app_size = appbase[1]
-    mreport.phone_name = g_phone[0]["phone_name"] +" " +g_phone[0]["phone_model"]
-    mreport.phone_rel = g_phone[0]["release"]
-    mreport.phone_pix = g_phone[3]
-    mreport.phone_raw = phone_raws(raw)
+    mreport.phone_name = BappK["phone_name"] +" " + BappK["phone_model"]
+    mreport.phone_rel =BappK["release"]
+    mreport.phone_pix = BappKernel.get_app_pix()
+    mreport.phone_raw = reportPhone.phone_raw(raw/1024)
+
     print(common.MEN)
-    # max_men = [math.ceil((common.MEN[i])) for i in range(len(common.MEN))]  # 获取每次占用内存多少
-    avg_men = [math.ceil((common.MEN[i])/raw) for i in range(len(common.MEN))]  # 获取每次占用内存多少
-    mreport.phone_avg_use_raw = phone_avg_use_raws(avg_men)
-    mreport.phone_max_use_raw = phone_max_use_raws(common.MEN)
-    mreport.phone_cpu = g_phone[2]
-    mreport.phone_avg_use_cpu = phone_avg_use_cpus(common.CPU)
-    mreport.phone_avg_max_use_cpu = phone_avg_max_use_cpus(common.CPU)
+    avg_men = BappKernel.get_avg_raw(common.MEN)  # 获取每次占用内存多少
+    mreport.phone_avg_use_raw = avg_men
+    mreport.phone_max_use_raw = reportPhone.phone_max_use_raw(common.MEN)
+    mreport.phone_cpu = BappKernel.get_cpu_kel()
+    mreport.phone_avg_use_cpu = reportPhone.phone_avg_use_cpu(common.CPU)
+    mreport.phone_avg_max_use_cpu = reportPhone.phone_avg_max_use_cpu(common.CPU)
     mreport.app_version = appbase[2]
     mreport.test_date = start_test_time
-    mreport.fps_max = fps_max(common.FPS)
-    mreport.fps_avg = fps_avg(common.FPS)
+    mreport.fps_max = reportPhone.fps_max(common.FPS)
+    mreport.fps_avg = reportPhone.fps_avg(common.FPS)
     Breport.set_report(mreport)
 
 def runnerCaseApp():
 
-    start_test_time = getDateStr(time.localtime(), "%Y-%m-%d %H:%M %p")
+    start_test_time = dataToString.getStrTime(time.localtime(), "%Y-%m-%d %H:%M %p")
     suite = unittest.TestSuite()
     starttime = datetime.datetime.now()
-    # suite.addTest(TestInterfaceCase.parametrize(testCrash))
-    # test1 = testHome1(TestInterfaceCase)
-    suite.addTest(TestInterfaceCase.parametrize(testHome1))
+    suite.addTest(TestInterfaceCase.parametrize(testHome))
+    suite.addTest(TestInterfaceCase.parametrize(testContact))
     unittest.TextTestRunner(verbosity=2).run(suite)
     endtime = datetime.datetime.now()
     get_common_report(start_test_time, endtime, starttime)
-
+    report()
 def report():
     workbook = xlsxwriter.Workbook('report.xlsx')
     worksheet = workbook.add_worksheet("测试总况")
@@ -126,6 +95,6 @@ if __name__ == '__main__':
                 time.sleep(2)
             runnerCaseApp()
             appium_server.stop_server()
-            report()
+
     else:
         print(u"设备不存在")

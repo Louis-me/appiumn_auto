@@ -5,13 +5,17 @@ import json
 from Common import getXMl, appPerformance as ap, baseOperateElement as bo
 from Common.CoGlobal import *
 from Common import testLog
+from Common import reportPhone as rp
+from testBLL import BappKernel as ba
 class BexceCase():
 
-    def __init__(self, test_module="", getTempCase="", BaseTestCase=""):
+    def __init__(self, test_module="", getTempCase="", BaseTestCase="",fps=[], cpu=[], men=[]):
         self.test_module = test_module
         self.getTempCase = getTempCase
         self.BaseTestCase = BaseTestCase
-
+        self.fps = fps
+        self.cpu = cpu
+        self.men = men
     def getModeList(self, f):
         bs = []
         gh = getXMl.getYam(f)
@@ -51,9 +55,21 @@ class BexceCase():
                 if go.operate_element(k)== False:
                      logTest.checkPointNG(common.DRIVER, kwargs["test_name"], kwargs["test_name"])
                      logTest.resultNG(kwargs["test_name"], "找不页面元素")
-                common.MEN.append(ap.get_men(common.PACKAGE))
-                common.CPU.append(ap.top_cpu(common.PACKAGE))
-                common.FPS.append(ap.get_fps(common.PACKAGE))
+
+                get_men = ap.get_men(common.PACKAGE)
+                get_cpu = ap.top_cpu(common.PACKAGE)
+                get_fps = ap.get_fps(common.PACKAGE)
+
+
+                self.cpu.append(get_cpu)
+                self.men.append(get_men)
+                self.fps.append(get_fps)
+
+                common.MEN.append(get_men)
+                common.CPU.append(get_cpu)
+                common.FPS.append(get_fps)
+
+
         if go.findElement(ch_check):
             common.test_success += 1
             self.getTempCase.test_result = "成功"
@@ -75,10 +91,17 @@ class BexceCase():
         self.getTempCase.test_name =kwargs["test_name"]
         self.getTempCase.test_module = self.test_module
         common.test_sum += 1
+
+        self.getTempCase.test_men_max = rp.phone_max_use_raw(self.men)
+        avg_men = ba.get_avg_raw(self.men)  # 获取每次占用内存多少
+         # reportPhone.phone_avg_use_raw(avg_men)
+        self.getTempCase.test_men_avg = avg_men
+        self.getTempCase.test_cpu_max = rp.phone_avg_max_use_cpu(self.cpu)
+        self.getTempCase.test_cpu_avg = rp.phone_avg_use_cpu(self.cpu)
+        self.getTempCase.test_fps_max = rp.fps_max(self.fps)
+        self.getTempCase.test_fps_avg = rp.fps_avg(self.fps)
+
         common.RESULT["info"].append(json.loads(json.dumps(self.getTempCase().to_primitive())))
         if kwargs["isLast"] == "1":
         # 最后case要写最下面的统计步骤
             common.RRPORT["info"].append(common.RESULT["info"])
-
-
-

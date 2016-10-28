@@ -1,0 +1,43 @@
+﻿--- 
+-
+  element_info: cn.ibona.t1_beta:id/feedBackComplete_btn
+  find_type: by_id
+  operate_type: click
+  test_id: 1005
+  test_intr: 工作汇报
+- 
+  element_info: cn.ibona.t1_beta:id/applicationLinearLayout
+  find_type: by_id
+  operate_type: click
+- 
+ element_info: //android.support.v7.widget.RecyclerView//android.widget.LinearLayout[@index='4']
+ find_type: by_xpath
+ operate_type: click
+-
+  element_info: cn.ibona.t1_beta:id/action_publish
+  find_type: by_id
+  operate_type: click
+- 
+  element_info: //android.widget.TextView[@text='日报']
+  find_type: by_xpath
+  operate_type: click
+-
+  element_info: cn.ibona.t1_beta:id/rl_public_report_date  
+  find_type: by_id
+  operate_type: click
+-
+  element_info: //android.widget.RelativeLayout[@index='0']
+  find_type: by_xpath
+  operate_type: click
+- 
+  element_info: cn.ibona.t1_beta:id/et_public_report_content
+  find_type: by_id
+  operate_type: send_keys
+  text: 2323123123123213
+- 
+  element_info: cn.ibona.t1_beta:id/menu_notify_finish
+  find_type: by_id
+  operate_type: click
+-
+  element_info: cn.ibona.t1_beta:id/toolbar
+  find_type: by_id

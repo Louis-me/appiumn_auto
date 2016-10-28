@@ -21,29 +21,32 @@ class TestInterfaceCase(unittest.TestCase):
     def setUpClass():
         desired_caps = {}
         global driver
-        if ga.platformName == common.ANDROID or ga.platformName == common.IOS and common.FLAG:
-            desired_caps['platformName'] = ga.platformName
-            desired_caps['platformVersion'] = ga.platformVersion
-            desired_caps['deviceName'] = ga.deviceName
-            desired_caps['appPackage'] = ga.appPackage
-            desired_caps['appActivity'] = ga.appActivity
-            desired_caps['app'] = PATH(
-            '../img/t.apk'
-        )
-        #     desired_caps["unicodeKeyboard"] = "True"
-        #     desired_caps["resetKeyboard"] = "True"
-            common.PACKAGE = ga.appPackage
-            driver = webdriver.Remote(ga.Remote, desired_caps)
-
-            common.DRIVER = driver
-            common.FLAG = False
+        if ga.platformName == common.ANDROID or ga.platformName == common.IOS:
+            if common.FLAG:
+                desired_caps['platformName'] = ga.platformName
+                desired_caps['platformVersion'] = ga.platformVersion
+                desired_caps['deviceName'] = ga.deviceName
+                desired_caps['appPackage'] = ga.appPackage
+                desired_caps['appActivity'] = ga.appActivity
+                desired_caps['app'] = PATH(
+                '../img/t.apk'
+            )
+            #     desired_caps["unicodeKeyboard"] = "True"
+            #     desired_caps["resetKeyboard"] = "True"
+                common.PACKAGE = ga.appPackage
+                driver = webdriver.Remote(ga.Remote, desired_caps)
+                print("FLAG_setUpClass")
+                print(common.FLAG)
+                common.DRIVER = driver
+                common.FLAG = False
     def setUp(self):
-        pass
+        print("FLAG_setUp")
+        print(common.FLAG)
 
     @staticmethod
     def tearDownClass():
-        driver.close_app()
-        driver.quit()
+        # driver.close_app()
+        # driver.quit()
         print('tearDownClass')
 
     @staticmethod

@@ -10,10 +10,11 @@ def phone_avg_use_raw(men):
     if len(men) > 0 :
         return str(math.ceil(sum(men)/len(men))) + "%"
     return 0
-def phone_max_use_raw(men):
-    if len(men) > 0:
-        return str(math.ceil((max(men))/1024)) + "M"
+def phone_max_use_raw(l_men):
+    if len(l_men) > 0:
+        return str(math.ceil((max(l_men))/1024)) + "M"
     return "0"
+
 
 def phone_avg_max_use_cpu(cpu):
     if len(cpu):
@@ -26,6 +27,8 @@ def phone_raw(raw):
     return "0"
 
 def fps_max(d_fps):
+    print("fps_max")
+    print(d_fps)
     if len(d_fps) > 0:
         return str(max(d_fps))
     return "0"

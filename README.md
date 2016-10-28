@@ -170,3 +170,11 @@ execCase(r'D:\appium\testcase\home\home_more_adv.yaml', test_id="2004", test_int
 
 # 2016-10-26 更新日志
 * 新增总统计FPS的支持
+
+# 2016-10-28 更新日志
+* 新增对每个case的fps,men,cpu的统计
+* 把yaml和case文件放到项目中编写，之前是放到某个硬盘里面
+
+![1.png](img/1.png "1.png")
+
+![2.png](img/2.png "2.png")

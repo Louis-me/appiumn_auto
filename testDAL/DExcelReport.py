@@ -130,13 +130,19 @@ class sendReport:
 
 
 
-        worksheet.merge_range('A1:F1', '测试详情', get_format(self.wd, {'bold': True, 'font_size': 18 ,'align': 'center','valign': 'vcenter','bg_color': 'blue', 'font_color': '#ffffff'}))
+        worksheet.merge_range('A1:L1', '测试详情', get_format(self.wd, {'bold': True, 'font_size': 18 ,'align': 'center','valign': 'vcenter','bg_color': 'blue', 'font_color': '#ffffff'}))
         _write_center(worksheet, "A2", '用例ID', self.wd)
         _write_center(worksheet, "B2", '模块', self.wd)
         _write_center(worksheet, "C2", '用例介绍', self.wd)
         _write_center(worksheet, "D2", '用例名字', self.wd)
-        _write_center(worksheet, "E2", '测试结果', self.wd)
-        _write_center(worksheet, "F2", '失败原因', self.wd)
+        _write_center(worksheet, "E2", '内存峰值(M)', self.wd)
+        _write_center(worksheet, "F2", '内存均值(M)', self.wd)
+        _write_center(worksheet, "G2", 'CPU峰值', self.wd)
+        _write_center(worksheet, "H2", 'CPU均值', self.wd)
+        _write_center(worksheet, "I2", 'FPS峰值', self.wd)
+        _write_center(worksheet, "J2", 'FPS均值', self.wd)
+        _write_center(worksheet, "K2", '测试结果 ', self.wd)
+        _write_center(worksheet, "L2", '失败原因', self.wd)
 
 
         # data = {"info": [{"test_id": "1001", "test_name": "登陆", "t_method": "post", "t_url": "http://XXX?login", "t_param": "{user_name:test,pwd:111111}",
@@ -149,15 +155,22 @@ class sendReport:
             _write_center(worksheet, "B"+str(temp), item["test_module"], self.wd)
             _write_center(worksheet, "C"+str(temp), item["test_intr"], self.wd)
             _write_center(worksheet, "D"+str(temp), item["test_name"], self.wd)
-            _write_center(worksheet, "E"+str(temp), item["test_result"], self.wd)
-            _write_center(worksheet, "F"+str(temp), item["test_reason"], self.wd)
+            _write_center(worksheet, "E"+str(temp), item["test_men_max"], self.wd)
+            _write_center(worksheet, "F"+str(temp), item["test_men_avg"], self.wd)
+            _write_center(worksheet, "G"+str(temp), item["test_cpu_max"], self.wd)
+            _write_center(worksheet, "H"+str(temp), item["test_cpu_avg"], self.wd)
+            _write_center(worksheet, "I"+str(temp), item["test_fps_max"], self.wd)
+            _write_center(worksheet, "J"+str(temp), item["test_fps_avg"], self.wd)
+            _write_center(worksheet, "K"+str(temp), item["test_result"], self.wd)
+            _write_center(worksheet, "L"+str(temp), item["test_reason"], self.wd)
+
             temp = temp + 1
     def close(self):
         self.wd.close()
 def get_format(wd, option={}):
     return wd.add_format(option)
 
-def get_format_center(wd,num=1):
+def get_format_center(wd, num=1):
     return wd.add_format({'align': 'center','valign': 'vcenter','border':num})
 def set_border_(wd, num=1):
     return wd.add_format({}).set_border(num)

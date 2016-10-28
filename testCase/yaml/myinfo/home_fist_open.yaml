@@ -1,0 +1,20 @@
+﻿--- 
+-
+  element_info: //android.widget.Button[@text='允许']
+  test_intr: 引导图
+  operate_type: click
+  find_type: by_xpath
+  test_id: 1001
+-
+  element_info: cn.ibona.t1_beta:id/btn_skip
+  operate_type: click
+  find_type: by_id
+- 
+  operate_type: swipeLeft
+  time: 5
+  element_info: android.widget.ImageView
+  find_type: class_name
+- 
+  element_info: android.widget.Button
+  find_type: by_name
+  name: 立即开启

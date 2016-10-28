@@ -1,0 +1,49 @@
+﻿--- 
+- 
+  element_info: cn.ibona.t1_beta:id/serviceView
+  find_type: by_id
+  operate_type: click
+  test_id: 1003
+  test_intr: 个人反馈
+- 
+  element_info: cn.ibona.t1_beta:id/meLinearLayout
+  find_type: by_id
+  operate_type: click
+- 
+  element_info: //android.widget.ImageView[@index='0']
+  operate_type: click
+  find_type: by_xpath
+
+-
+  element_info: cn.ibona.t1_beta:id/helpAndFeedbackRelativeLayout
+  find_type: by_id
+  operate_type: click
+-
+  element_info: cn.ibona.t1_beta:id/feedbackEditText
+  find_type: by_id
+  operate_type: send_keys
+  text: 1111111
+- 
+  element_info: cn.ibona.t1_beta:id/imageView
+  find_type: by_id
+  operate_type: click
+- 
+  element_info: cn.ibona.t1_beta:id/checkmark
+  find_type: by_ids
+  index: 0
+  operate_type: click
+-
+  element_info: cn.ibona.t1_beta:id/menu_finish
+  find_type: by_id
+  operate_type: click
+-
+  element_info: cn.ibona.t1_beta:id/send_feedBack_button
+  find_type: by_id
+  operate_type: click
+
+-
+  element_info: cn.ibona.t1_beta:id/feedBackComplete_iv
+  find_type: by_id
+
+
+

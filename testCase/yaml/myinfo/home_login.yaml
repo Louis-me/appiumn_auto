@@ -1,0 +1,25 @@
+﻿--- 
+- 
+  element_info: cn.ibona.t1_beta:id/start_button
+  find_type: by_id
+  operate_type: click
+  test_id: 1002
+  test_intr: 登陆
+- 
+  element_info: cn.ibona.t1_beta:id/passwordEditText
+  find_type: by_id
+  operate_type: send_keys
+  test_id: 1002
+  text: 111111
+- 
+  element_info: cn.ibona.t1_beta:id/phoneNumberEditText
+  find_type: by_id
+  operate_type: send_keys
+  text: 18576759587
+- 
+  element_info: cn.ibona.t1_beta:id/loginButton
+  find_type: by_id
+  operate_type: click
+- 
+  element_info: cn.ibona.t1_beta:id/toolbar
+  find_type: by_id

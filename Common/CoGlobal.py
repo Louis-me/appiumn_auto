@@ -46,6 +46,7 @@ class common(object):
     CPU = []
     PACKAGE = ""
     FPS = []
+    RAW = 0
    # 错误日志
     ANR = "ANR"
     I_ANR = 0

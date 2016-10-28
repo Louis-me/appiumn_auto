@@ -19,7 +19,7 @@ def top_cpu(pkg_name):
     return result
 
 def get_men(pkg_name):
-    result = ""
+    result = "0"
     cmd = "adb shell  dumpsys  meminfo %s"  %(pkg_name)
     temp = []
     m = []
@@ -47,8 +47,7 @@ def get_fps(pkg_name):
             if r:
                 f_sum += float(r.group())
             # t_result.append('%.2f'%f_sum)
-        print(f_sum)
-        return  float('%.2f'%f_sum)
+        return float('%.2f'%f_sum)
     # print(r_result)
     # print(t_result)
 
