@@ -15,8 +15,8 @@ class common(object):
     find_elements_by_xpath = "by_xpaths"
     find_element_by_class_name = "class_name"
     find_elements_by_class_name = "class_names"
-
-
+    SELENIUM = "selenium"
+    APPIUM = "appium"
     ANDROID = "android"
     IOS = "ios"
     IE = "ie"
@@ -30,6 +30,7 @@ class common(object):
     FLAG = True
 
 
+    SELENIUM_APPIUM = "appium"
 
     RRPORT = {"info":[]}
     RESULT = {"info":[]}
@@ -57,4 +58,6 @@ class common(object):
 
     WAIT_TIME = 5
 
+    #selenium
+    SEND_CODE = "send_code" # 输入验证码
 

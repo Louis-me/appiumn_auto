@@ -177,3 +177,26 @@ execCase(r'D:\appium\testcase\home\home_more_adv.yaml', test_id="2004", test_int
 ![1.png](img/1.png "1.png")
 
 ![2.png](img/2.png "2.png")
+
+# 2016-11-4 更新日志
+
+* 集成selenium运行方式，用的chromedriver,建议使用phantomjs，只是简单的使用，后续工作需要可以继续优化
+* 代码不用改变，只要设置devices.ini即可
+
+```
+[DEFAULT]
+selenium_appium=selenium #appium 
+[appium]
+devices=DU2TAN15AJ049163
+platformName=android
+platformVersion=4.4.2
+appPackage=cn.ibona.t1_beta
+appActivity=cn.ibona.t1.main.ui.activity.SplashActivity
+Remote=http://localhost:4723/wd/hub
+appiumjs=node D:\\app\Appium\\node_modules\\appium\\bin\\appium.js
+[selenium]
+selenium_jar = java -jar D:\\app\\appium_study\\img\\selenium-server-standalone-3.0.1.jar
+sel_remote=http://127.0.0.1:4444/wd/hub
+open_url=http://182.254.228.211:9000/index.php/Admin/index/login.html
+
+```

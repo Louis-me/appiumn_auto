@@ -3,13 +3,14 @@ from testDAL import DtestServer
 
 # 控制appium的服务
 class AppiumServer():
-    def __init__(self, openAppium, baseUrl):
+    def __init__(self, openAppium, baseUrl, selenium_appium):
         self.openAppium = openAppium
         self.baseUrl = baseUrl
-        self.appium = DtestServer.AppiumServer(self.openAppium, self.baseUrl)
+        self.selenium_appium = selenium_appium
+        self.server = DtestServer.AppiumServer(self.openAppium, self.baseUrl, self.selenium_appium)
     def start_server(self):
-        self.appium.start_server()
+        self.server.start_server()
     def stop_server(self):
-        self.appium.stop_server()
+        self.server.stop_server()
     def is_runnnig(self):
-        return self.appium.is_runnnig()
+        return self.server.is_runnnig()

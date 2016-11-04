@@ -1,0 +1,41 @@
+﻿---
+-
+  element_info: username
+  find_type: by_id
+  operate_type: send_keys
+  test_id: 1002
+  test_intr: 意见反馈
+  text: admin
+-
+  element_info: password
+  find_type: by_id
+  operate_type: send_keys
+  text: 123
+-
+  element_info: //*[@id="loginform"]/form/div[3]/div/input
+  find_type: by_xpath
+  operate_type: send_code
+-
+  element_info: //*[@id="loginform"]/form/div[4]/div/input
+  find_type: by_xpath
+  operate_type: click
+-
+  element_info: /html/body/aside/div/dl[2]/dt
+  find_type: by_xpath
+  operate_type: click
+-
+  element_info: /html/body/aside/div/dl[2]/dd/ul/li
+  find_type: by_xpath
+  operate_type: click
+-
+  element_info: search
+  find_type: by_id
+  operate_type: send_keys
+  text: 11
+- 
+  element_info: sou
+  find_type: by_id
+  operate_type: click
+- 
+  element_info: /html/body/div[1]/table/tbody/tr[1]/td[1]
+  find_type: by_xpath

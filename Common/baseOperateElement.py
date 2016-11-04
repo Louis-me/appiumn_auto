@@ -19,6 +19,7 @@ class getOperateElement():
         '''
         try:
             WebDriverWait(self.cts, common.WAIT_TIME).until(lambda x: elements_by(mOperate, self.cts))
+            print(mOperate["element_info"])
             return True
         except selenium.common.exceptions.TimeoutException:
             return False
@@ -33,11 +34,15 @@ class getOperateElement():
                 common.CLICK: lambda: operate_click(mOperate, self.cts),
                 # common.TAP: lambda: operate_tap(mOperate["find_type"], self.cts,  mOperate["element_info"], arg),
                 common.SEND_KEYS: lambda: send_keys(mOperate, self.cts),
-                common.SWIPELEFT: lambda : opreate_swipe_left(mOperate, self.cts)
+                common.SWIPELEFT: lambda : opreate_swipe_left(mOperate, self.cts),
+                common.SEND_CODE: lambda : send_code()
             }
             return elements[mOperate["operate_type"]]()
         return False
 
+# 如果要输入验证码，暂停10秒钟，手动去输入
+def send_code():
+    time.sleep(10)
 # 点击事件
 def operate_click(mOperate,cts):
     if mOperate["find_type"] == common.find_element_by_id or mOperate["find_type"] == common.find_element_by_name or mOperate["find_type"] == common.find_element_by_xpath:
@@ -45,8 +50,10 @@ def operate_click(mOperate,cts):
     if mOperate["find_type"] == common.find_elements_by_id or mOperate["find_type"] == common.find_elements_by_name:
         elements_by(mOperate, cts)[mOperate["index"]].click()
     # 记录运行过程中的一些系统日志，比如闪退会造成自动化测试停止
-    errorLog.get_error(log=r"d:\operate_log.txt")
+    if common.SELENIUM_APPIUM == common.APPIUM:
+        errorLog.get_error(log=r"d:\operate_log.txt")
 
+# 左滑动
 def opreate_swipe_left(mOperate, cts):
     time.sleep(1)
     width = cts.get_window_size()["width"]

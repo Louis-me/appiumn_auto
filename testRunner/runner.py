@@ -3,41 +3,62 @@ __author__ = 'Administrator'
 import unittest
 from appium import webdriver
 from Common.CoGlobal import *
-from testMode import MAppDevices
-from testBLL import BAppDevices
+from testMode import MDevices
+from testBLL import BDevices
 import os
+from selenium import webdriver as web
+from seleniumrequests import Chrome
+from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 
 PATH = lambda p: os.path.abspath(
     os.path.join(os.path.dirname(__file__), p)
 )
-def appDevices():
-    mapp = MAppDevices.getDriver()
-    return BAppDevices.appDevices(mapp, PATH("../AppDevices.ini"))
-ga = appDevices()
+
+
+def Devices():
+    mapp = MDevices.getDriver()
+    return BDevices.BgetDevices(mapp, PATH("../Devices.ini"))
+ga = Devices()
+
+def appium_testcase():
+    desired_caps = {}
+    desired_caps['platformName'] = ga.platformName
+    desired_caps['platformVersion'] = ga.platformVersion
+    desired_caps['deviceName'] = ga.deviceName
+    desired_caps['appPackage'] = ga.appPackage
+    desired_caps['appActivity'] = ga.appActivity
+    desired_caps['app'] = PATH( '../img/t.apk')
+    #     desired_caps["unicodeKeyboard"] = "True"
+    #     desired_caps["resetKeyboard"] = "True"
+    common.PACKAGE = ga.appPackage
+    driver = webdriver.Remote(ga.Remote, desired_caps)
+    common.DRIVER = driver
+    common.FLAG = False
+
+def selenium_testcase():
+    chromedriver = "C:\Program Files (x86)\Google\Chrome\Application\chromedriver.exe"
+    os.environ["webdriver.chrome.driver"] = chromedriver
+    driver = web.Chrome(chromedriver)
+    # driver = web.PhantomJS(executable_path=phantomjs_path, service_log_path=os.path.devnull)
+    common.DRIVER = driver
+    common.FLAG = False
+    driver.maximize_window()  #将浏览器最大化
+    driver.get(ga.open_url)
 class TestInterfaceCase(unittest.TestCase):
     def __init__(self, methodName='runTest'):
         super(TestInterfaceCase, self).__init__(methodName)
     @staticmethod
     def setUpClass():
-        desired_caps = {}
         global driver
-        if ga.platformName == common.ANDROID or ga.platformName == common.IOS:
-            if common.FLAG:
-                desired_caps['platformName'] = ga.platformName
-                desired_caps['platformVersion'] = ga.platformVersion
-                desired_caps['deviceName'] = ga.deviceName
-                desired_caps['appPackage'] = ga.appPackage
-                desired_caps['appActivity'] = ga.appActivity
-                desired_caps['app'] = PATH(
-                '../img/t.apk'
-            )
-            #     desired_caps["unicodeKeyboard"] = "True"
-            #     desired_caps["resetKeyboard"] = "True"
-                common.PACKAGE = ga.appPackage
-                driver = webdriver.Remote(ga.Remote, desired_caps)
-                print(common.FLAG)
-                common.DRIVER = driver
-                common.FLAG = False
+        common.SELENIUM_APPIUM = ga.selenium_appium
+        if common.SELENIUM_APPIUM == common.APPIUM: # appium入口
+            if ga.platformName == common.ANDROID and common.FLAG:
+                appium_testcase()
+        if common.SELENIUM_APPIUM == common.SELENIUM and common.FLAG: # selenium入口
+            selenium_testcase()
+            # driver.get("http://www.baidu.com")
+            # data = driver.title
+            pass
     def setUp(self):
         print("setUp")
     @staticmethod

@@ -1,15 +1,15 @@
-﻿--- 
-- 
+﻿---
+-
   element_info: cn.ibona.t1_beta:id/serviceView
   find_type: by_id
   operate_type: click
   test_id: 1003
   test_intr: 个人反馈
-- 
+-
   element_info: cn.ibona.t1_beta:id/meLinearLayout
   find_type: by_id
   operate_type: click
-- 
+-
   element_info: //android.widget.ImageView[@index='0']
   operate_type: click
   find_type: by_xpath

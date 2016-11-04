@@ -10,6 +10,7 @@ from Common import reportPhone
 from testRunner.runner import TestInterfaceCase,ga
 from testCase.Home import testHome
 from testCase.work import testContact
+from testCase.web.comment import testComment
 from testBLL import BgetEmail
 from testBLL import BtestServer
 from testBLL import BAdbCommon
@@ -63,6 +64,15 @@ def get_common_report(start_test_time, endtime, starttime):
     mreport.fps_avg = reportPhone.fps_avg(common.FPS)
     Breport.set_report(mreport)
 
+def get_common_web_report(start_test_time, endtime, starttime):
+    pass
+
+def runnerCaseWeb():
+    suite = unittest.TestSuite()
+    starttime = datetime.datetime.now()
+    suite.addTest(TestInterfaceCase.parametrize(testComment))
+    unittest.TextTestRunner(verbosity=2).run(suite)
+
 def runnerCaseApp():
 
     start_test_time = dataToString.getStrTime(time.localtime(), "%Y-%m-%d %H:%M %p")
@@ -84,17 +94,22 @@ def report():
     bc.detail(worksheet2)
     bc.close()
     # BsendEmail.send_mail(get_email())
-    appium_server.stop_server()
 
 if __name__ == '__main__':
-    if BAdbCommon.attached_devices():
-        if ga.platformName == common.ANDROID or ga.platformName == common.IOS:
-            appium_server = BtestServer.AppiumServer(ga.appiumJs, ga.Remote)
+        if ga.platformName == common.ANDROID and ga.selenium_appium == common.APPIUM:
+            if BAdbCommon.attached_devices():
+                appium_server = BtestServer.AppiumServer(ga.appiumJs, ga.Remote,ga.selenium_appium)
+                appium_server.start_server()
+                while not appium_server.is_runnnig():
+                    time.sleep(2)
+                runnerCaseApp()
+                appium_server.stop_server()
+            else:
+                print(u"设备不存在")
+        if ga.selenium_appium == common.SELENIUM:
+            appium_server = BtestServer.AppiumServer(ga.selenium_jar, ga.sel_remote, ga.selenium_appium)
             appium_server.start_server()
             while not appium_server.is_runnnig():
                 time.sleep(2)
-            runnerCaseApp()
+            runnerCaseWeb()
             appium_server.stop_server()
-
-    else:
-        print(u"设备不存在")

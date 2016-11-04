@@ -2,12 +2,10 @@ __author__ = 'Administrator'
 import yaml
 # -*- coding:utf-8 -*-
 def getYam(homeyaml):
-    print("文件路径")
     print(homeyaml)
     try:
         with open(homeyaml, encoding='utf-8') as f:
             x = yaml.load(f)
-            # print(x[0]["findElemtType"])
             print(x)
             return x
     except FileNotFoundError:

@@ -3,16 +3,22 @@ import os
 import urllib.request
 from urllib.error import URLError
 from multiprocessing import Process
-
+from Common.CoGlobal import *
+PATH = lambda p: os.path.abspath(
+    os.path.join(os.path.dirname(__file__), p)
+)
 import threading
 # readConfigLocal = readConfig.ReadConfig()
 class AppiumServer:
 
-    def __init__(self, openAppium, baseUrl):
+    def __init__(self, openAppium=None, baseUrl=None, selenium_appium=""):
         # openAppium = "node D:\\app\Appium\\node_modules\\appium\\bin\\appium.js"
         # baseUrl = "http://127.0.0.1:4723/wd/hub"
+        # openAppium = "java -jar " + PATH("../img/selenium-server-standalone-3.0.1.jar")
+        # baseUrl = "http://127.0.0.1:4444/wd/hub"
         self.openAppium = openAppium
         self.baseUrl = baseUrl
+        self.selenium_appium = selenium_appium
     def start_server(self):
         """start the appium server
         :return:
@@ -23,10 +29,16 @@ class AppiumServer:
 
     def stop_server(self):
         """stop the appium server
+        selenium_appium: appium selenium
         :return:
         """
         # kill myServer
-        os.system('taskkill /f /im node.exe')
+        res = ""
+        if self.selenium_appium == common.APPIUM:
+            res = "node.exe"
+        else:
+            res = "java.exe"
+        os.system('taskkill /f /im '+res)
     def re_start_server(self):
         """reStart the appium server
         """
@@ -62,10 +74,10 @@ class RunServer(threading.Thread):
 
 
 # if __name__ == "__main__":
-
-    # oo = AppiumServer()
-    # oo.start_server()
-    # print("strart server")
-    # print("running server")
-    # oo.stop_server()
-    # print("stop server")
+#
+#     oo = AppiumServer()
+#     oo.start_server()
+#     print("strart server")
+#     print("running server")
+#     oo.stop_server()
+#     print("stop server")
