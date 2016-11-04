@@ -200,3 +200,9 @@ sel_remote=http://127.0.0.1:4444/wd/hub
 open_url=http://182.254.228.211:9000/index.php/Admin/index/login.html
 
 ```
+
+ÃüÃûÖ´ĞĞ´Ë¿ò¼Ü£º
+
+```
+python runner4.py
+```
