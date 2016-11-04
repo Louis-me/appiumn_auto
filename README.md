@@ -37,6 +37,8 @@ open_url=http://182.254.228.211:9000/index.php/Admin/index/login.html
 
 **配置用例ymal**
 
+* [case的api](mark.md)
+
 ```
 --- 
 - 
@@ -66,7 +68,6 @@ open_url=http://182.254.228.211:9000/index.php/Admin/index/login.html
 
 ```
 
-	* 配置信息参考[用例API](mark.md)
 
 
 **命名行运行:**
