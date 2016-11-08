@@ -78,7 +78,7 @@ def runnerCaseApp():
     suite = unittest.TestSuite()
     starttime = datetime.datetime.now()
     suite.addTest(TestInterfaceCase.parametrize(testHome))
-    suite.addTest(TestInterfaceCase.parametrize(testContact))
+    # suite.addTest(TestInterfaceCase.parametrize(testContact))
     unittest.TextTestRunner(verbosity=2).run(suite)
     endtime = datetime.datetime.now()
     get_common_report(start_test_time, endtime, starttime)
