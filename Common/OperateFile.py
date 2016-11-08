@@ -1,6 +1,6 @@
 __author__ = 'Administrator'
 import os
-class base_file:
+class OperateFile:
     #method(r,w,a)
     def __init__(self, file, method='w+'):
         self.file = file
@@ -8,19 +8,19 @@ class base_file:
         self.fileHandle = None
 
     def write_txt(self, line):
-        base_file(self.file).check_file()
+        OperateFile(self.file).check_file()
         self.fileHandle = open(self.file, self.method)
         self.fileHandle.write(line + "\n")
         self.fileHandle.close()
 
     def read_txt_row(self):
-        base_file(self.file).check_file()
+        OperateFile(self.file).check_file()
         self.fileHandle = open(self.file, self.method)
         print(self.fileHandle.readline())
         self.fileHandle.close()
 
     def read_txt_rows(self):
-        base_file(self.file).check_file()
+        OperateFile(self.file).check_file()
         self.fileHandle = open(self.file, self.method)
         file_list = self.fileHandle.readlines()
         for i in file_list:
@@ -49,7 +49,7 @@ class base_file:
         else:
             print("文件不存在")
 # if __name__ == '__main__':
-#     bf = base_file("text.xml")
+#     bf = OperateFile("text.xml")
 #     if bf.check_file() == False:
 #         bf.mkdir_file()
 #     bf.write_txt("111")

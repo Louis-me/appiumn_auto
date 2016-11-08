@@ -1,31 +1,31 @@
-# ×Ô¶¯»¯²âÊÔÆ½Ì¨
-## ¿ò¼Ü½éÉÜ
-* »ùÓÚpython3
-* »ùÓÚapp UI×Ô¶¯»¯£¬Ê¹ÓÃappium£¨¿ÉÓÃÓÚios,ºÍ°²×¿£©
+ï»¿# è‡ªåŠ¨åŒ–æµ‹è¯•å¹³å°
+## æ¡†æ¶ä»‹ç»
+* åŸºäºpython3
+* åŸºäºapp UIè‡ªåŠ¨åŒ–ï¼Œä½¿ç”¨appiumï¼ˆå¯ç”¨äºios,å’Œå®‰å“ï¼‰
 
-### 2015-10-10 ¸üĞÂÈÕÖ¾
-*  Common Ö÷Òª·ÅÒ»Ğ©È«¾Ö±äÁ¿£¬ÆäËû¹«ÓÃ·½·¨
-*  img Ö÷Òª·ÅÒ»Ğ©Í¼Æ¬£¬²âÊÔµÄappÎÄ¼ş
-*  testBLL  Èı²ã
-*  testDAL Èı²ã
-*  testModel Èı²ã
+### 2015-10-10 æ›´æ–°æ—¥å¿—
+*  Common ä¸»è¦æ”¾ä¸€äº›å…¨å±€å˜é‡ï¼Œå…¶ä»–å…¬ç”¨æ–¹æ³•
+*  img ä¸»è¦æ”¾ä¸€äº›å›¾ç‰‡ï¼Œæµ‹è¯•çš„appæ–‡ä»¶
+*  testBLL  ä¸‰å±‚
+*  testDAL ä¸‰å±‚
+*  testModel ä¸‰å±‚
 *  testRunner 
-  *  Ò»¸ö³éÏóÈë¿Ú£¬Ö÷Òª¹ÜÀíÕû¸ö¿ò¼ÜµÄsetUpClass,tearDownClass£¬ÒÔ¼°parametrize
-  * Ò»¸öÊÇÕæÕıµÄÈë¿Ú£¬µ÷ÓÃ³éÏóÈë¿Ú
+  *  ä¸€ä¸ªæŠ½è±¡å…¥å£ï¼Œä¸»è¦ç®¡ç†æ•´ä¸ªæ¡†æ¶çš„setUpClass,tearDownClassï¼Œä»¥åŠparametrize
+  * ä¸€ä¸ªæ˜¯çœŸæ­£çš„å…¥å£ï¼Œè°ƒç”¨æŠ½è±¡å…¥å£
 	
 
-## 2015-11-10 ¸üĞÂÈÕÖ¾
-* ÒıÓÃyamlÀ´ÅäÖÃ²âÊÔ°¸Àı£¬´úÌæxml
-* ¸üĞÂÁË×Ô¶¨ÒåÈÕÖ¾º¯Êı
-* ÓÃÀı³éÏó»¯£¬ÈçËùÓĞµÄµØ·½Ö»ÒªĞŞ¸ÄtestDriver.webChatHome.py ¼´¿É£¬ÆäËûµØ·½ÎŞĞèĞŞ¸Ä
+## 2015-11-10 æ›´æ–°æ—¥å¿—
+* å¼•ç”¨yamlæ¥é…ç½®æµ‹è¯•æ¡ˆä¾‹ï¼Œä»£æ›¿xml
+* æ›´æ–°äº†è‡ªå®šä¹‰æ—¥å¿—å‡½æ•°
+* ç”¨ä¾‹æŠ½è±¡åŒ–ï¼Œå¦‚æ‰€æœ‰çš„åœ°æ–¹åªè¦ä¿®æ”¹testDriver.webChatHome.py å³å¯ï¼Œå…¶ä»–åœ°æ–¹æ— éœ€ä¿®æ”¹
 
-## 2016-1-19 ¸üĞÂÈÕÖ¾
-* ¹æ·¶markdownÓï·¨
+## 2016-1-19 æ›´æ–°æ—¥å¿—
+* è§„èŒƒmarkdownè¯­æ³•
 
 ## 2016-3-25
-* ¸üĞÂÁËÓÃÀıµÄ¹ÜÀí£¬ÓÃÀıÖ»Ğíµ½D:\appium\testcase\module(ÏîÄ¿Ä£¿é)¶¨Òå×Ô¼ºµÄÓÃÀı£º
-* testCaseÄ¿Â¼±àĞ´ÏàÓ¦µÄ¼ì²éºÍÖ´ĞĞ²Ù×÷¼´¿É
-```yamlÅäÖÃÎÄ¼ş
+* æ›´æ–°äº†ç”¨ä¾‹çš„ç®¡ç†ï¼Œç”¨ä¾‹åªè®¸åˆ°D:\appium\testcase\module(é¡¹ç›®æ¨¡å—)å®šä¹‰è‡ªå·±çš„ç”¨ä¾‹ï¼š
+* testCaseç›®å½•ç¼–å†™ç›¸åº”çš„æ£€æŸ¥å’Œæ‰§è¡Œæ“ä½œå³å¯
+```yamlé…ç½®æ–‡ä»¶
  - element_info: com.xfb.user:id/home_fragment_arrow_left_img
    operate_type: click
    findElemtType: id
@@ -33,32 +33,32 @@
    operate_type: null
    findElemtType: id
 ```
- * µÚÒ»¸ö¶ÔÏóÊÇ²Ù×÷
- * µÚ¶ş¸ö¶ÔÏóÊÇ¼ì²éµã
+ * ç¬¬ä¸€ä¸ªå¯¹è±¡æ˜¯æ“ä½œ
+ * ç¬¬äºŒä¸ªå¯¹è±¡æ˜¯æ£€æŸ¥ç‚¹
 
-* ½á¹ûÕ¹Ê¾ÓÅ»¯
- * ĞÂÔö½ØÍ¼
- * ĞÂÔöµ÷ÊÔÈÕÖ¾ºÍÖ´ĞĞÈÕÖ¾·Ö¿ªÏÔÊ¾
-``` µ÷ÊÔĞÅÏ¢
+* ç»“æœå±•ç¤ºä¼˜åŒ–
+ * æ–°å¢æˆªå›¾
+ * æ–°å¢è°ƒè¯•æ—¥å¿—å’Œæ‰§è¡Œæ—¥å¿—åˆ†å¼€æ˜¾ç¤º
+``` è°ƒè¯•ä¿¡æ¯
  2016-03-25 18:03:14,098 - root - INFO - ----  test_check_home   START     ----
 ``` 
-``` Ö´ĞĞÈÕÖ¾
+``` æ‰§è¡Œæ—¥å¿—
  test_click_home: OK
 ``` 
-* Æô¶¯´úÂëÓÅ»¯¡£Ê¹ÓÃsetUpClass tearDownClass ´úÌæsetup,teardown¡£Ã¿´ÎÖ´ĞĞÍêËùÓĞcase²Å»á¹Ø±Õapp
+* å¯åŠ¨ä»£ç ä¼˜åŒ–ã€‚ä½¿ç”¨setUpClass tearDownClass ä»£æ›¿setup,teardownã€‚æ¯æ¬¡æ‰§è¡Œå®Œæ‰€æœ‰caseæ‰ä¼šå…³é—­app
 
 
-## 2016-4-28 ¸üĞÂÈÕÖ¾
-* ¸üĞÂÁËunittest²ÎÊı»¯£¬Ã¿´ÎÖ»Òª  suite.addTest(TestInterfaceCase.parametrize(testShiBase)) Àà£¬¾Í¿ÉÒÔÖ´ĞĞÕâ¸öÀàÀïÃæµÄËùÓĞcase¡£Èë¿Ú±ä³ÉÁËrunner4.py
+## 2016-4-28 æ›´æ–°æ—¥å¿—
+* æ›´æ–°äº†unittestå‚æ•°åŒ–ï¼Œæ¯æ¬¡åªè¦  suite.addTest(TestInterfaceCase.parametrize(testShiBase)) ç±»ï¼Œå°±å¯ä»¥æ‰§è¡Œè¿™ä¸ªç±»é‡Œé¢çš„æ‰€æœ‰caseã€‚å…¥å£å˜æˆäº†runner4.py
 
-* ĞÂÔö½á¹ûÕ¹Ê¾,²ÉÓÃµÄÊÇpyhÆ´½ÓµÄ·½Ê½À´Éú³Éhtml±¨¸æ
+* æ–°å¢ç»“æœå±•ç¤º,é‡‡ç”¨çš„æ˜¯pyhæ‹¼æ¥çš„æ–¹å¼æ¥ç”ŸæˆhtmlæŠ¥å‘Š
 
 ![report.png](img/report.png "report.png")
 
 
-## 2016-7-24¸üĞÂÈÕÖ¾
+## 2016-7-24æ›´æ–°æ—¥å¿—
 
-* ÓÅ»¯²Ù×÷Àà
+* ä¼˜åŒ–æ“ä½œç±»
 
 ```
 class getOperateElement():
@@ -66,9 +66,9 @@ class getOperateElement():
         self.cts = driver
     def findElement(self, elemt_by, element_info):
         '''
-        ²éÕÒÔªËØ
-        :param elemt_by:   ²éÕÒÀàĞÍ,id,xpathµÈ
-        :param element_info: ¾ßÌåÔªËØ²ÎÊı£¬ÈçxpathµÄÖµ£¬idµÄÖµ
+        æŸ¥æ‰¾å…ƒç´ 
+        :param elemt_by:   æŸ¥æ‰¾ç±»å‹,id,xpathç­‰
+        :param element_info: å…·ä½“å…ƒç´ å‚æ•°ï¼Œå¦‚xpathçš„å€¼ï¼Œidçš„å€¼
         :return:
         '''
         try:
@@ -77,15 +77,15 @@ class getOperateElement():
         except selenium.common.exceptions.TimeoutException:
             return False
         except selenium.common.exceptions.NoSuchElementException:
-            print("ÕÒ²»µ½Êı¾İ")
+            print("æ‰¾ä¸åˆ°æ•°æ®")
             return False
     def operate_element(self, operate, elemen_by, element_info, *arg):
         '''
-        ËùÓĞµÄ²Ù×÷Èë¿Ú
-        :param operate: ²Ù×÷¶ÔÓ¦commonÖĞµÄclick,tapµÈ
-        :param elemen_by: ¶ÔÓ¦commonÖĞµÄid,xpath,nameµÈ
-        :param element_info: ÏêÏ¸µÄÔªËØ£¬ÈçxpathµÄ¸ñÊ½£¬Èçid,nameµÄÃû×Ö
-        :param arg: À©Õ¹×Ö¶Î´«list
+        æ‰€æœ‰çš„æ“ä½œå…¥å£
+        :param operate: æ“ä½œå¯¹åº”commonä¸­çš„click,tapç­‰
+        :param elemen_by: å¯¹åº”commonä¸­çš„id,xpath,nameç­‰
+        :param element_info: è¯¦ç»†çš„å…ƒç´ ï¼Œå¦‚xpathçš„æ ¼å¼ï¼Œå¦‚id,nameçš„åå­—
+        :param arg: æ‰©å±•å­—æ®µä¼ list
         :return:
         '''
         elements = {
@@ -94,15 +94,15 @@ class getOperateElement():
         }
         return elements[operate]()
 
-# µã»÷ÊÂ¼ş
+# ç‚¹å‡»äº‹ä»¶
 def operate_click(elemen_by,cts,element_info):
     elements_by(elemen_by, cts, element_info).click()
 
-# Çá´òxÖáÏòÓÒÒÆ¶¯xµ¥Î»£¬yÖáÏòÏÂÒÆ¶¯yµ¥Î»
+# è½»æ‰“xè½´å‘å³ç§»åŠ¨xå•ä½ï¼Œyè½´å‘ä¸‹ç§»åŠ¨yå•ä½
 def operate_tap(elemen_by,cts,element_info, xy=[]):
     elements_by(elemen_by, cts, element_info).tap(x=xy[0], y=xy[1])
 
-# ·â×°³£ÓÃµÄfind±êÇ©
+# å°è£…å¸¸ç”¨çš„findæ ‡ç­¾
 def elements_by(types, cts, element_info):
     elements = {
         common.ID : lambda :cts.find_element_by_id(element_info),
@@ -113,23 +113,23 @@ def elements_by(types, cts, element_info):
 
 ```
 
-# 2016-7-29 ¸üĞÂÈÕÖ¾
-* [·â×°appium-serverÆô¶¯](https://github.com/284772894/appiumn_auto/blob/master/testRunner/testServer.py)
-* [schematics´úÌæmodel²ãµÄ¹¦ÄÜ](https://github.com/284772894/appiumn_auto/blob/master/testMode/BaseAppDevices.py)£¬ÍêÈ«È¡´ú´«Í³µÄget set,²¢ÇÒ»¹ÄÜÑéÖ¤×Ö¶ÎµÄÀàĞÍÊÇ·ñÕıÈ·
+# 2016-7-29 æ›´æ–°æ—¥å¿—
+* [å°è£…appium-serverå¯åŠ¨](https://github.com/284772894/appiumn_auto/blob/master/testRunner/testServer.py)
+* [schematicsä»£æ›¿modelå±‚çš„åŠŸèƒ½](https://github.com/284772894/appiumn_auto/blob/master/testMode/BaseAppDevices.py)ï¼Œå®Œå…¨å–ä»£ä¼ ç»Ÿçš„get set,å¹¶ä¸”è¿˜èƒ½éªŒè¯å­—æ®µçš„ç±»å‹æ˜¯å¦æ­£ç¡®
 
-# 2016-8-6 ¸üĞÂÈÕÖ¾
-* Ê¹ÓÃÃüÃûµÄ·½Ê½Æô¶¯appium
-* ÓÅ»¯ÓÃÀı±àĞ´Àà£¬ÒÔºóÖ»Òª¸ÄÓÃÀıµÄyamlÎÄ¼şºÍÓÃÀıcase.py¼´¿ÉÔËĞĞ
+# 2016-8-6 æ›´æ–°æ—¥å¿—
+* ä½¿ç”¨å‘½åçš„æ–¹å¼å¯åŠ¨appium
+* ä¼˜åŒ–ç”¨ä¾‹ç¼–å†™ç±»ï¼Œä»¥ååªè¦æ”¹ç”¨ä¾‹çš„yamlæ–‡ä»¶å’Œç”¨ä¾‹case.pyå³å¯è¿è¡Œ
 
 ```
-# ÕâÑùµ÷ÓÃÓÃÀı¼´¿É
-execCase(r'D:\appium\testcase\home\home_more_adv.yaml', test_id="2004", test_intr="Ê×Ò³¹ã¸æ", test_case="test_home_more_adv",isLast="1")
+# è¿™æ ·è°ƒç”¨ç”¨ä¾‹å³å¯
+execCase(r'D:\appium\testcase\home\home_more_adv.yaml', test_id="2004", test_intr="é¦–é¡µå¹¿å‘Š", test_case="test_home_more_adv",isLast="1")
 
 ```
 
 # 2016-8-26
-* ¸üĞÂ²âÊÔ±¨¸æ£¬ÓÃexcelÕ¹Ê¾
-* ÓÊ¼ş·¢ËÍ²âÊÔ±¨¸æ
+* æ›´æ–°æµ‹è¯•æŠ¥å‘Šï¼Œç”¨excelå±•ç¤º
+* é‚®ä»¶å‘é€æµ‹è¯•æŠ¥å‘Š
 
 ![testReport.png](img/testReport.png "testReport.png")
 
@@ -138,50 +138,50 @@ execCase(r'D:\appium\testcase\home\home_more_adv.yaml', test_id="2004", test_int
 ![testEmail.png](img/testEmail.png "testMail.png")
 
 # 2016-9-5
-* Èı²ã¼Ü¹¹ÖØ¹¹Õû¸öÏµÍ³£¬·ÖÎªÁËmodel,dal,bll,common,testCase(Ö÷Òª±àĞ´ÓÃÀı),runner£¨Èë¿Ú£©
-* ¸üĞÂ¼ÇÂ¼ÄÚ´æ£¬cpu,Æ½¾ùºÍ×î´ó·åÖµÇé¿ö
+* ä¸‰å±‚æ¶æ„é‡æ„æ•´ä¸ªç³»ç»Ÿï¼Œåˆ†ä¸ºäº†model,dal,bll,common,testCase(ä¸»è¦ç¼–å†™ç”¨ä¾‹),runnerï¼ˆå…¥å£ï¼‰
+* æ›´æ–°è®°å½•å†…å­˜ï¼Œcpu,å¹³å‡å’Œæœ€å¤§å³°å€¼æƒ…å†µ
 
 # 2016-9-6
-* ĞŞ¸´¼ÆËãÄÚ´æ´íÎó
-* ÓÅ»¯´úÂë½âñî
+* ä¿®å¤è®¡ç®—å†…å­˜é”™è¯¯
+* ä¼˜åŒ–ä»£ç è§£è€¦
 
 # 2016-8-7
-* ÖØ¹¹DALµ÷ÓÃDAL²ãÎÊÌâ£¬·Åµ½ÁËcommon²ãÀïÃæÈ¥ÁË
+* é‡æ„DALè°ƒç”¨DALå±‚é—®é¢˜ï¼Œæ”¾åˆ°äº†commonå±‚é‡Œé¢å»äº†
 
 
 # 2016-9-21
-* ĞÂÔö¼ÇÂ¼ÔËĞĞÈÕÖ¾£¬±ÈÈçÉÁÍËÁË£¬ÏÖÔÚ±£Áô×îºóÒ»´Î²âÊÔÈÕÖ¾¡£ÒòÎª¿ò¼ÜÉÁÍËºó£¬»áÍ£Ö¹ÔËĞĞ£¬¿ÉÒÔ¸ù¾İ×îºóÒ»´ÎÔì³ÉÉÁÍËµÄÈÕÖ¾ÕÒµ½ÎÊÌâµã
-	* ºóĞøÓÅ»¯ÉÁÍËºó£¬»áÖØĞÂÆô¶¯¿ò¼ÜÔËĞĞºóÃæcase,±È½ÏÂé·³£¬ÔİÊ±»¹Ã»ÓĞºÃµÄË¼Â·
-* ĞÂÔöÖ´ĞĞcaseÊ§°Üºó£¬½ØÍ¼µ½±¾µØ
-* ĞÂÔö²Ù×÷ºÍ¼ì²éµãµÄÔËĞĞÈÕÖ¾
-* ºóĞøÓÅ»¯¼ÇÂ¼ÈÕÖ¾ºÍ±¨¸æÉú³ÉÎÊÌâ
+* æ–°å¢è®°å½•è¿è¡Œæ—¥å¿—ï¼Œæ¯”å¦‚é—ªé€€äº†ï¼Œç°åœ¨ä¿ç•™æœ€åä¸€æ¬¡æµ‹è¯•æ—¥å¿—ã€‚å› ä¸ºæ¡†æ¶é—ªé€€åï¼Œä¼šåœæ­¢è¿è¡Œï¼Œå¯ä»¥æ ¹æ®æœ€åä¸€æ¬¡é€ æˆé—ªé€€çš„æ—¥å¿—æ‰¾åˆ°é—®é¢˜ç‚¹
+	* åç»­ä¼˜åŒ–é—ªé€€åï¼Œä¼šé‡æ–°å¯åŠ¨æ¡†æ¶è¿è¡Œåé¢case,æ¯”è¾ƒéº»çƒ¦ï¼Œæš‚æ—¶è¿˜æ²¡æœ‰å¥½çš„æ€è·¯
+* æ–°å¢æ‰§è¡Œcaseå¤±è´¥åï¼Œæˆªå›¾åˆ°æœ¬åœ°
+* æ–°å¢æ“ä½œå’Œæ£€æŸ¥ç‚¹çš„è¿è¡Œæ—¥å¿—
+* åç»­ä¼˜åŒ–è®°å½•æ—¥å¿—å’ŒæŠ¥å‘Šç”Ÿæˆé—®é¢˜
 
-# 2016-10-24 ¸üĞÂÈÕÖ¾
+# 2016-10-24 æ›´æ–°æ—¥å¿—
 
-* ±àĞ´ÅäÖÃ[caseµÄapi](mark.md)
-* ÓÅ»¯¶ÔÃ¿¸ö²Ù×÷²½ÖèÊµĞĞÖÇÄÜ²éÕÒÔªËØ£¬Èç¹ûÔªËØ²»´æÔÚ£¬½ØÍ¼¼ÇÂ¼´íÎóÈÕÖ¾
-* ¶Ôxpath,×ó»¬¶¯£¬tag_name,clas_nameµÄÖ§³Ö
+* ç¼–å†™é…ç½®[caseçš„api](mark.md)
+* ä¼˜åŒ–å¯¹æ¯ä¸ªæ“ä½œæ­¥éª¤å®è¡Œæ™ºèƒ½æŸ¥æ‰¾å…ƒç´ ï¼Œå¦‚æœå…ƒç´ ä¸å­˜åœ¨ï¼Œæˆªå›¾è®°å½•é”™è¯¯æ—¥å¿—
+* å¯¹xpath,å·¦æ»‘åŠ¨ï¼Œtag_name,clas_nameçš„æ”¯æŒ
 
-# 2016-10-25 ¸üĞÂÈÕÖ¾
+# 2016-10-25 æ›´æ–°æ—¥å¿—
 
-* µ÷ÊÔ¶ÔÃ¿¸ö²Ù×÷caseµÄĞÔÄÜĞÅÏ¢¼à¿Ø
-* ÓÅ»¯´úÂëPATHÏà¶ÔÂ·¾¶µÄÊ¹ÓÃ
+* è°ƒè¯•å¯¹æ¯ä¸ªæ“ä½œcaseçš„æ€§èƒ½ä¿¡æ¯ç›‘æ§
+* ä¼˜åŒ–ä»£ç PATHç›¸å¯¹è·¯å¾„çš„ä½¿ç”¨
 
-# 2016-10-26 ¸üĞÂÈÕÖ¾
-* ĞÂÔö×ÜÍ³¼ÆFPSµÄÖ§³Ö
+# 2016-10-26 æ›´æ–°æ—¥å¿—
+* æ–°å¢æ€»ç»Ÿè®¡FPSçš„æ”¯æŒ
 
-# 2016-10-28 ¸üĞÂÈÕÖ¾
-* ĞÂÔö¶ÔÃ¿¸öcaseµÄfps,men,cpuµÄÍ³¼Æ
-* °ÑyamlºÍcaseÎÄ¼ş·Åµ½ÏîÄ¿ÖĞ±àĞ´£¬Ö®Ç°ÊÇ·Åµ½Ä³¸öÓ²ÅÌÀïÃæ
+# 2016-10-28 æ›´æ–°æ—¥å¿—
+* æ–°å¢å¯¹æ¯ä¸ªcaseçš„fps,men,cpuçš„ç»Ÿè®¡
+* æŠŠyamlå’Œcaseæ–‡ä»¶æ”¾åˆ°é¡¹ç›®ä¸­ç¼–å†™ï¼Œä¹‹å‰æ˜¯æ”¾åˆ°æŸä¸ªç¡¬ç›˜é‡Œé¢
 
 ![1.png](img/1.png "1.png")
 
 ![2.png](img/2.png "2.png")
 
-# 2016-11-4 ¸üĞÂÈÕÖ¾
+# 2016-11-4 æ›´æ–°æ—¥å¿—
 
-* ¼¯³ÉseleniumÔËĞĞ·½Ê½£¬ÓÃµÄchromedriver,½¨ÒéÊ¹ÓÃphantomjs£¬Ö»ÊÇ¼òµ¥µÄÊ¹ÓÃ£¬ºóĞø¹¤×÷ĞèÒª¿ÉÒÔ¼ÌĞøÓÅ»¯
-* ´úÂë²»ÓÃ¸Ä±ä£¬Ö»ÒªÉèÖÃdevices.ini¼´¿É
+* é›†æˆseleniumè¿è¡Œæ–¹å¼ï¼Œç”¨çš„chromedriver,å»ºè®®ä½¿ç”¨phantomjsï¼Œåªæ˜¯ç®€å•çš„ä½¿ç”¨ï¼Œåç»­å·¥ä½œéœ€è¦å¯ä»¥ç»§ç»­ä¼˜åŒ–
+* ä»£ç ä¸ç”¨æ”¹å˜ï¼Œåªè¦è®¾ç½®devices.iniå³å¯
 
 ```
 [DEFAULT]
@@ -201,8 +201,14 @@ open_url=http://182.254.228.211:9000/index.php/Admin/index/login.html
 
 ```
 
-ÃüÃûÖ´ĞĞ´Ë¿ò¼Ü£º
+å‘½åæ‰§è¡Œæ­¤æ¡†æ¶ï¼š
 
 ```
-python runner4.py
+python runner.py
 ```
+
+# 2016-11-8 æ›´æ–°æ—¥å¿—
+* æ›´æ–°å‘½åè§„åˆ™
+	* æºæ–‡ä»¶ç”¨é¦–å­—æ¯å°å†™å¼€å¤´çš„åè¯å‘½å
+	* classé¦–å­—æ¯å¤§å†™å¼€å¤´çš„åè¯å’Œåç§°çŸ­è¯­å‘½å
+	* æ–¹æ³•ç”¨åŠ¨è¯å‘½å

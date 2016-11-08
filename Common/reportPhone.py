@@ -1,6 +1,6 @@
 __author__ = 'Administrator'
 import math
-from Common.CoGlobal import *
+from common.variable import GetVariable as common
 def phone_avg_use_cpu(cpu):
     result = ""
     if len(cpu) > 0:

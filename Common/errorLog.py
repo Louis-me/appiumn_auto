@@ -10,18 +10,18 @@ def get_error(log="d:\log.txt"):
     # with open(log, encoding="utf-8", mode="r") as f:
     #     lines = f.readlines()
     #     for line in lines:
-    #         if re.findall(common.ANR, line):
+    #         if re.findall(GetVariable.ANR, line):
     #             print('\033[1;31;42m')
     #             print("存在anr错误:", line)
-    #             common.I_ANR += 1
-    #         if re.findall(common.CRASH, line):
+    #             GetVariable.I_ANR += 1
+    #         if re.findall(GetVariable.CRASH, line):
     #             print('\033[1;31;42m')
     #             print("存在crash错误:", line)
-    #             common.I_CRASH += 1
-    #         if re.findall(common.EXCEPTION, line):
+    #             GetVariable.I_CRASH += 1
+    #         if re.findall(GetVariable.EXCEPTION, line):
     #             print('\033[1;31;42m')
     #             print("存在EXCEPTION错误:", line)
-    #             common.I_EXCEPTION += 1
+    #             GetVariable.I_EXCEPTION += 1
 
 
 def save_log(log="d:\log.txt", pack=""):

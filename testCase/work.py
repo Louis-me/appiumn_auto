@@ -4,14 +4,14 @@ import os
 PATH = lambda p: os.path.abspath(
     os.path.join(os.path.dirname(__file__), p)
 )
-from testBLL import BaseCaseList
-from testMode import MBaseTestCase
-from testRunner.runner import TestInterfaceCase
-from Common.CoGlobal import *
+from testBLL import appCase as b_app_case
+from testMode import appCase as m_app_case
+from testRunner.runnerBase import TestInterfaceCase
+from common.variable import GetVariable as common
 class testContact(TestInterfaceCase):
     def __init__(self, methodName=''):
         super(testContact, self).__init__(methodName)
-        self.bc = BaseCaseList.BexceCase(test_module="应用中心", getTempCase=MBaseTestCase.getTempCase, BaseTestCase=MBaseTestCase.BaseTestCase, fps=[], cpu=[], men=[])
+        self.bc = b_app_case.GetAppCase(test_module="应用中心", AppCaseInfo=m_app_case.GetAppCaseInfo, AppCase=m_app_case.GetAppCase, fps=[], cpu=[], men=[])
     @staticmethod
     def tearDownClass():
         common.DRIVER.close_app()

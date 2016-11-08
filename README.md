@@ -73,7 +73,7 @@ open_url=http://182.254.228.211:9000/index.php/Admin/index/login.html
 **命名行运行:**
 
 ```
-pyhton testRunner/runner4.py
+pyhton testRunner/runner.py
 ```
 
 # 使用截图
