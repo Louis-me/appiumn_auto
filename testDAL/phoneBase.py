@@ -5,8 +5,8 @@ import math
 from math import ceil
 from common.variable import GetVariable as common
 # 得到手机信息
-def get_phone_info(cmd_log):
-    os.system('adb shell cat /system/build.prop >'+cmd_log)
+def get_phone_info(cmd_log, devices):
+    os.system('adb -s ' + devices +' shell cat /system/build.prop >'+cmd_log)
     l_list = {}
     with open(cmd_log, "r") as f:
         lines = f.readlines()
@@ -27,8 +27,8 @@ def get_phone_info(cmd_log):
         os.remove(cmd_log)
     return l_list
 
-def get_men_total(cmd_log):
-    os.system("adb shell cat /proc/meminfo >" + cmd_log)
+def get_men_total(cmd_log, devices):
+    os.system("adb -s "+devices+ " shell cat /proc/meminfo >" + cmd_log)
     men_total = ""
     with open(cmd_log, "r") as f:
             lines = f.readlines()
@@ -41,8 +41,8 @@ def get_men_total(cmd_log):
         os.remove(cmd_log)
     return int(men_total)
 # 得到几核cpu
-def get_cpu_kel(log):
-    os.system("adb shell cat /proc/cpuinfo >" + log)
+def get_cpu_kel(log, devices):
+    os.system("adb -s " +devices +" shell cat /proc/cpuinfo >" + log)
     cpu_kel = 0
     with open(log, "r") as f:
             lines = f.readlines()
@@ -56,21 +56,14 @@ def get_cpu_kel(log):
 # print(get_cpu_kel("d:\\men.txt"))
 
 # 得到手机分辨率
-def get_app_pix():
-    result = os.popen("adb shell wm size", "r")
+def get_app_pix(devices):
+    result = os.popen("adb -s " + devices+ " shell wm size", "r")
     return result.readline().split("Physical size:")[1]
 
-# def get_phone_raw(log):
-#     return get_phone_kernel(log)[1]
-def get_avg_raw(l_men):
+def get_avg_raw(l_men, devices):
     if common.RAW == 0:
-        common.RAW = get_men_total(r"d:\men.txt")
-    # print("shikun")
-    # print(l_men)
-    # print(GetVariable.RAW)
+        common.RAW = get_men_total(r"d:\men.txt", devices)
     l_men = [math.ceil(((l_men[i])/common.RAW)*1024) for i in range(len(l_men))]  # 获取每次占用内存多少
-    # print("l_men")
-    # print(l_men)
     if len(l_men) > 0 :
             return str(math.ceil(sum(l_men)/len(l_men))) + "%"
     return 0

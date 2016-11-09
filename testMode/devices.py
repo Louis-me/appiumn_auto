@@ -15,6 +15,7 @@ class getDriver(Model):
     appActivity = StringType()
     Remote = StringType()
     appiumJs = StringType()
+    port = StringType()
 
     # selenium
     sel_remote = StringType()

@@ -6,8 +6,8 @@ PATH = lambda p: os.path.abspath(
 )
 from testBLL import appCase as b_app_case
 from testMode import appCase as m_app_case
-from testRunner.runnerBase import TestInterfaceCase
-class testHome(TestInterfaceCase):
+from testRunner.runnerBase import TestInterfaceCase as te
+class testHome(te):
     def __init__(self, methodName=''):
         super(testHome, self).__init__(methodName)
         self.bc = b_app_case.GetAppCase(test_module="个人中心", AppCaseInfo=m_app_case.GetAppCaseInfo, AppCase=m_app_case.GetAppCase, fps=[], cpu=[], men=[])

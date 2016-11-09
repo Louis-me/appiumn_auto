@@ -13,41 +13,59 @@ class ApkInfo():
         size = floor(os.path.getsize(self.apkpath)/(1024*1000))
         return str(size) + "M"
     # 得到版本
-    def get_apk_version(self, pag):
-        cmd = "aapt dump badging " + self.apkpath + " | grep " + pag
-        return self.get_apk_info(cmd, 62, -30)
+    def get_apk_version(self):
+        cmd = "aapt dump badging " + self.apkpath + " | grep versionName"
+        result = ""
+        p = subprocess.Popen(cmd, stdout=subprocess.PIPE,
+                             stderr=subprocess.PIPE,
+                             stdin=subprocess.PIPE, shell=True)
+        (output, err) = p.communicate()
+        if output != "":
+            result = output.split()[3].decode()[12:]
+        print(result)
+        return result
 
     #得到应用名字
     def get_apk_name(self):
-        cmd = "aapt dump badging " + self.apkpath + " | grep application-label:"
-        return self.get_apk_info(cmd, 19, -2)
-
-    # 得到app的详细信息
-    def get_apk_info(self, commond,start, end):
+        cmd = "aapt dump badging " + self.apkpath + " | grep application-label: "
         result = ""
-        p = subprocess.Popen(commond, stdout=subprocess.PIPE,
-                               stderr=subprocess.PIPE,
-                               stdin=subprocess.PIPE,shell=True)
+        p = subprocess.Popen(cmd, stdout=subprocess.PIPE,
+                             stderr=subprocess.PIPE,
+                             stdin=subprocess.PIPE, shell=True)
         (output, err) = p.communicate()
         if output != "":
-            result = output[start:end]
-        return result.decode()
+            result = output.split()[0].decode()[18:]
+        print(result)
+        return result
 
-    def get_app_msg(self):
-        apk_name = self.get_apk_name() # app名字
-        apk_siz = self.get_apk_size() # app大小
-        apk_version = self.get_apk_version("versionName") # app版本
-        # print(apk_version)
-        return apk_name, apk_siz, apk_version
+    #得到包名
+    def get_apk_pkg(self):
+        cmd = "aapt dump badging " + self.apkpath + " | grep package:"
+        result = ""
+        p = subprocess.Popen(cmd, stdout=subprocess.PIPE,
+                             stderr=subprocess.PIPE,
+                             stdin=subprocess.PIPE, shell=True)
+        (output, err) = p.communicate()
+        if output != "":
+            result = output.split()[1].decode()[5:]
+        print(result)
+        return result
 
-# COMMOND1 = "aapt dump badging "
-# COMMOND2 = " | grep application-label:"
-# COMMOND3 = " | grep package"
-# apk_path = "zhishang.apk"
-# commond1 = COMMOND1+apk_path+COMMOND3
-# commond2 = COMMOND1+apk_path+COMMOND2
-#
-# ApkInfo(r"D:\app\appium_study\img\t.apk").get_app_msg() # 版本
-# # get_apk_info(commond, 62, -30) 大小
-# # get_apk_info(commond2, 19, -2) #项目名称
+    #得到启动类
+    def get_apk_activity(self):
+        cmd = "aapt dump badging " + self.apkpath + " | grep launchable-activity:"
+        result = ""
+        p = subprocess.Popen(cmd, stdout=subprocess.PIPE,
+                             stderr=subprocess.PIPE,
+                             stdin=subprocess.PIPE, shell=True)
+        (output, err) = p.communicate()
+        if output != "":
+            result = output.split()[1].decode()[6:-1]
+        return result
+# ApkInfo(r"D:\app\appium_study\img\t.apk").get_apk_pkg()
+# ApkInfo(r"D:\app\appium_study\img\t.apk").get_apk_version()
+# ApkInfo(r"D:\app\appium_study\img\t.apk").get_apk_name()
+# ApkInfo(r"D:\app\appium_study\img\t.apk").get_apk_activity()
+# ApkInfo(r"D:\app\appium_study\img\t.apk").get_apk_activity()
+
 

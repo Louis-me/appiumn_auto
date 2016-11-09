@@ -7,7 +7,7 @@ import xlsxwriter
 import time
 import unittest
 from common import reportPhone
-from testRunner.runnerBase import TestInterfaceCase, ga
+from testRunner.runnerBase import TestInterfaceCase
 from testCase.Home import testHome
 from testCase.work import testContact
 from testCase.web.comment import testComment
@@ -16,48 +16,59 @@ from testBLL import server
 from testBLL import adbCommon
 from testMode import email as memail
 from testBLL import report as b_report
-from testBLL import appBase
+from testBLL import phoneBase
 from testBLL import apkBase
 from testMode import report as m_report
 from common.variable import GetVariable as common
 from common import dataToString
 import os
+from testBLL import devices
+from testMode import devices as mdevices
+
 PATH = lambda p: os.path.abspath(
     os.path.join(os.path.dirname(__file__), p)
 )
+def get_devices():
+    return devices.get_devices(mdevices, PATH("../devices.ini"), PATH("../img/t.apk"))
+ga = get_devices()
+
 def get_email():
     m_email = memail.GetEmail()
     m_email.file = PATH( '../email.ini' )
     email = b_email.read_email(m_email)
     return email
 
-def get_app_msg(f=r"D:\app\appium_study\img\t.apk"):
-    return apkBase.apkInfo(f).get_app_msg()
+# def get_app_msg(f=r"D:\app\appium_study\img\t.apk"):
+#     return apkBase.apkInfo(f).get_app_msg()
+
 def get_common_report(start_test_time, endtime, starttime):
     mreport = m_report.GetReport()
 
-    b_get_hp_info = appBase.get_phone_info()
-    raw = appBase.get_men_total(r"d:\men.log")
-    app_msg = get_app_msg(PATH( '../img/t.apk'))
+    b_get_hp_info = phoneBase.get_phone_info(devices=ga.deviceName)
+    raw = phoneBase.get_men_total(devices=ga.deviceName)
+
+    apk_msg = apkBase.apkInfo(PATH( '../img/t.apk'))
+    mreport.app_name = apk_msg.get_apk_name()
+    mreport.app_size = apk_msg.get_apk_size()
+    mreport.app_version = apk_msg.get_apk_version()
+
     mreport.test_sum = common.test_sum
     mreport.test_failed = common.test_failed
     mreport.test_success = common.test_success
     mreport.test_sum_date = str((endtime - starttime).seconds-6) +"秒"
-    mreport.app_name = app_msg[0]
-    mreport.app_size = app_msg[1]
+
     mreport.phone_name = b_get_hp_info["phone_name"] +" " + b_get_hp_info["phone_model"]
     mreport.phone_rel =b_get_hp_info["release"]
-    mreport.phone_pix = appBase.get_app_pix()
+    mreport.phone_pix = phoneBase.get_app_pix(devices=ga.deviceName)
     mreport.phone_raw = reportPhone.phone_raw(raw/1024)
 
     print(common.MEN)
-    avg_men = appBase.get_avg_raw(common.MEN)  # 获取每次占用内存多少
+    avg_men = phoneBase.get_avg_raw(common.MEN, ga.deviceName)  # 获取每次占用内存多少
     mreport.phone_avg_use_raw = avg_men
     mreport.phone_max_use_raw = reportPhone.phone_max_use_raw(common.MEN)
-    mreport.phone_cpu = appBase.get_cpu_kel()
+    mreport.phone_cpu = phoneBase.get_cpu_kel(devices=ga.deviceName)
     mreport.phone_avg_use_cpu = reportPhone.phone_avg_use_cpu(common.CPU)
     mreport.phone_avg_max_use_cpu = reportPhone.phone_avg_max_use_cpu(common.CPU)
-    mreport.app_version = app_msg[2]
     mreport.test_date = start_test_time
     mreport.fps_max = reportPhone.fps_max(common.FPS)
     mreport.fps_avg = reportPhone.fps_avg(common.FPS)

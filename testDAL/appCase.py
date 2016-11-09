@@ -6,7 +6,13 @@ from common import operateYaml, appPerformance as ap, operateElement as bo
 from common.variable import GetVariable as common
 from common import testLog
 from common import reportPhone as rp
-from testBLL import appBase as ba
+from testBLL import phoneBase as ba
+from testBLL import devices
+from testMode import devices as mdevices
+import os
+PATH = lambda p: os.path.abspath(
+    os.path.join(os.path.dirname(__file__), p)
+)
 class AppCase():
 
     def __init__(self, test_module="", GetAppCaseInfo="", GetAppCase="",fps=[], cpu=[], men=[]):
@@ -93,7 +99,7 @@ class AppCase():
         common.test_sum += 1
 
         self.GetAppCaseInfo.test_men_max = rp.phone_max_use_raw(self.men)
-        avg_men = ba.get_avg_raw(self.men)  # 获取每次占用内存多少
+        avg_men = ba.get_avg_raw(self.men, get_devices().deviceName)  # 获取每次占用内存多少
         self.GetAppCaseInfo.test_men_avg = avg_men
         self.GetAppCaseInfo.test_cpu_max = rp.phone_avg_max_use_cpu(self.cpu)
         self.GetAppCaseInfo.test_cpu_avg = rp.phone_avg_use_cpu(self.cpu)
@@ -104,3 +110,5 @@ class AppCase():
         if kwargs["isLast"] == "1":
         # 最后case要写最下面的统计步骤
             common.RRPORT["info"].append(common.RESULT["info"])
+def get_devices():
+    return devices.get_devices(mdevices, PATH("../devices.ini"), PATH("../img/t.apk"))
