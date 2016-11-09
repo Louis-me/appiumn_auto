@@ -20,15 +20,12 @@ git clone git@github.com:284772894/appiumn_auto.git
 
 ```
 [DEFAULT]
-selenium_appium=selenium # appium
+selenium_appium=appium
 [appium]
 devices=DU2TAN15AJ049163
-platformName=android
-platformVersion=4.4.2
-appPackage=cn.ibona.t1_beta
-appActivity=cn.ibona.t1.main.ui.activity.SplashActivity
-Remote=http://localhost:4723/wd/hub
+Remote=127.0.0.1
 appiumjs=node D:\\app\Appium\\node_modules\\appium\\bin\\appium.js
+port=4723
 [selenium]
 selenium_jar = java -jar D:\\app\\appium_study\\img\\selenium-server-standalone-3.0.1.jar
 sel_remote=http://127.0.0.1:4444/wd/hub
