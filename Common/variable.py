@@ -32,22 +32,22 @@ class GetVariable(object):
 
     SELENIUM_APPIUM = "appium"
 
-    RRPORT = {"info":[]}
-    RESULT = {"info":[]}
-    RESULT["test_module"] = "登陆模块1"
+    # RRPORT = {"info":[], "init": []}
+    # RESULT = {"info":[]}
+    # RESULT["test_module"] = "登陆模块1"
     SEND_KEYS = "send_keys"
     FIND_STR = "find_str"
 
-    test_sum = 0
-    test_success = 0
-    test_failed = 0
-    test_error_title = 0
-    time_took = ""
-    MEN = []
-    CPU = []
-    PACKAGE = ""
-    FPS = []
-    RAW = 0
+    # test_sum = 0
+    # test_success = 0
+    # test_failed = 0
+    # test_error_title = 0
+    # time_took = ""
+    # MEN = []
+    # CPU = []
+    # PACKAGE = ""
+    # FPS = []
+    # RAW = 0
    # 错误日志
     ANR = "ANR"
     I_ANR = 0
@@ -60,4 +60,11 @@ class GetVariable(object):
 
     #selenium
     SEND_CODE = "send_code" # 输入验证码
+
+    #本地存储记录所有的case情况的路径
+    REPORT_INFO_PATH = "d:/info.txt"
+    REPORT_INIT = "d:/init.txt"
+    REPORT_COLLECT_PATH = "d:/collect.txt"
+
+
 

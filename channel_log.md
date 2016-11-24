@@ -216,3 +216,30 @@ python runner.py
 # 2016-11-9 更新日志
 * 去掉手动输入包名，启动页面，版本等信息
 * 新增多设备扩展更加设备名监控性能信息
+
+# 2016-11-24 更新日志
+* 支持多android设备并行
+
+```
+appium:
+ - devices: JTJ4C16331013562
+   port: 4723
+   config: node D:\app\Appium\node_modules\appium\bin\appium.js  -p 4723 -bp 4733
+   platformName: android
+ - devices: MSM8926
+   port: 4724
+   config: node D:\app\Appium\node_modules\appium\bin\appium.js  -p 4724 -bp 4734
+   platformName: android
+
+```
+* 多设备监控运行信息
+* 测试报告统计多设备的case情况
+![testinit.png](img/testinit.png "testinit.png")
+
+![testinfo.png](img/testinfo.png "testinfo.png")
+
+* 逐渐取消schematics
+
+## 运行结果
+![run1.png](img/run1.png "run1.png")
+

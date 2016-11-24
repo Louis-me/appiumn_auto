@@ -14,18 +14,20 @@ class OperateFile:
         self.fileHandle.close()
 
     def read_txt_row(self):
-        OperateFile(self.file).check_file()
-        self.fileHandle = open(self.file, self.method)
-        print(self.fileHandle.readline())
-        self.fileHandle.close()
+        resutl = ""
+        if OperateFile(self.file).check_file():
+            self.fileHandle = open(self.file, self.method)
+            resutl = self.fileHandle.readline()
+            self.fileHandle.close()
+        return resutl
 
     def read_txt_rows(self):
-        OperateFile(self.file).check_file()
-        self.fileHandle = open(self.file, self.method)
-        file_list = self.fileHandle.readlines()
-        for i in file_list:
-            print(i.strip("\n"))
-        self.fileHandle.close()
+        if OperateFile(self.file).check_file():
+            self.fileHandle = open(self.file, self.method)
+            file_list = self.fileHandle.readlines()
+            for i in file_list:
+                print(i.strip("\n"))
+            self.fileHandle.close()
     def check_file(self):
         if not os.path.isfile(self.file):
             # print('文件不存在' + self.file)

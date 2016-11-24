@@ -11,5 +11,5 @@ class OperateReport:
         self.sr.test_detail(worksheet)
     def close(self):
         self.sr.close()
-    def set_report(self, mreport):
-        self.sr.set_report(mreport)
+    # def set_report(self, mreport):
+    #     self.sr.set_report(mreport)

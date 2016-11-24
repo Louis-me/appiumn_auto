@@ -2,40 +2,32 @@ __author__ = 'shikun'
 # -*- coding: utf-8 -*-
 import subprocess
 import re, os
+import math
 # 常用的性能监控
-def top_cpu(pkg_name):
-    result = 0
-    cmd = "adb shell dumpsys cpuinfo | grep -w " + pkg_name+":"
-    temp = []
-    # cmd = "adb shell top -n %s -s cpu | grep %s$" %(str(times), pkg_name)
-    top_info = subprocess.Popen(cmd, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE).stdout.readlines()
-    for info in top_info:
-        temp.append(info.split()[2].decode()) # bytes转换为string
-        break
-    for i in temp:
-        if i != "0%":
-            print("cpu="+i)
-            result = int(i.split("%")[0])
-    return result
+def top_cpu(devices, pkg_name):
+    cmd = "adb -s "+devices+" shell dumpsys cpuinfo | grep -w " + pkg_name+":"
+    get_cmd = os.popen(cmd).readlines()
+    for info in get_cmd:
+        return float(info.split()[2].split("%")[0])
+
+
 
 # 得到men的使用情况
-def get_men(pkg_name):
-    result = "0"
-    cmd = "adb shell  dumpsys  meminfo %s"  %(pkg_name)
-    temp = []
-    m = []
-    men_s = subprocess.Popen(cmd, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE).stdout.readlines()
-    for info in men_s:
-        temp.append(info.split())
-    m.append(temp)
-    for t in m:
-        result = t[19][1]
-        break
-    return int(result.decode())
+def get_men(devices, pkg_name):
+    cmd = "adb -s "+devices+" shell  dumpsys  meminfo %s"  %(pkg_name)
+    total = "TOTAL"
+    get_cmd = os.popen(cmd).readlines()
+    for info in get_cmd:
+        info_sp = info.strip().split()
+        for item in range(len(info_sp)):
+            if info_sp[item] == total:
+               return int(info_sp[item+1])
+    return 0
 
 # 得到fps
-def get_fps(pkg_name):
-    _adb = "adb shell dumpsys gfxinfo %s | grep -A 128 'Execute'  | grep -v '[a-Z]' "%pkg_name
+def get_fps(devices, pkg_name):
+    print("fps-")
+    _adb = "adb -s "+devices+" shell dumpsys gfxinfo %s | grep -A 128 'Execute'  | grep -v '[a-Z]' "%pkg_name
     result = os.popen(_adb).read().strip()
     result = result.split('\r\n')
     # r_result = [] # 总值
@@ -52,6 +44,7 @@ def get_fps(pkg_name):
         return float('%.2f'%f_sum)
     # print(r_result)
     # print(t_result)
+# get_phone_info("MSM8926")
 
 # 取到流量后可以用步骤后的流量减去步骤前的流量得到步骤消耗流量！也可以用时间差来计算！
 # def getFlow(pid="31586"):
@@ -63,3 +56,10 @@ def get_fps(pkg_name):
 #     flow[0].append(ceil(int(t[6][1])/1024)) # 下载
 #     flow[1].append(ceil(int(t[6][9])/1024)) # 发送
 #     return flow
+def read_report(f=""):
+    from common.operateFile import OperateFile
+    op = OperateFile(f, "r")
+    return op.read_txt_row()
+if __name__ == '__main__':
+    print(top_cpu(devices="DU2TAN15AJ049163",pkg_name="cn.ibona.t1_beta"))
+    pass

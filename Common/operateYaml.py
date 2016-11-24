@@ -1,12 +1,19 @@
 __author__ = 'Administrator'
 import yaml
+import os
+import sys
+
+from testBLL import phoneBase
+
+
 # -*- coding:utf-8 -*-
 def getYam(homeyaml):
-    print(homeyaml)
     try:
         with open(homeyaml, encoding='utf-8') as f:
             x = yaml.load(f)
             print(x)
             return x
     except FileNotFoundError:
-        print(u"找不到测试用例文件")
+        print(u"找不到文件")
+
+

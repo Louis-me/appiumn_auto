@@ -22,7 +22,6 @@ class ApkInfo():
         (output, err) = p.communicate()
         if output != "":
             result = output.split()[3].decode()[12:]
-        print(result)
         return result
 
     #得到应用名字
@@ -35,7 +34,6 @@ class ApkInfo():
         (output, err) = p.communicate()
         if output != "":
             result = output.split()[0].decode()[18:]
-        print(result)
         return result
 
     #得到包名
@@ -47,8 +45,7 @@ class ApkInfo():
                              stdin=subprocess.PIPE, shell=True)
         (output, err) = p.communicate()
         if output != "":
-            result = output.split()[1].decode()[5:]
-        print(result)
+            result = output.split()[1].decode()[6:-1]
         return result
 
     #得到启动类
@@ -62,10 +59,11 @@ class ApkInfo():
         if output != "":
             result = output.split()[1].decode()[6:-1]
         return result
-# ApkInfo(r"D:\app\appium_study\img\t.apk").get_apk_pkg()
-# ApkInfo(r"D:\app\appium_study\img\t.apk").get_apk_version()
-# ApkInfo(r"D:\app\appium_study\img\t.apk").get_apk_name()
-# ApkInfo(r"D:\app\appium_study\img\t.apk").get_apk_activity()
-# ApkInfo(r"D:\app\appium_study\img\t.apk").get_apk_activity()
+if __name__ == '__main__':
+    ApkInfo(r"D:\app\appium_study\img\t.apk").get_apk_pkg()
+    # ApkInfo(r"D:\app\appium_study\img\t.apk").get_apk_version()
+    # ApkInfo(r"D:\app\appium_study\img\t.apk").get_apk_name()
+    ApkInfo(r"D:\app\appium_study\img\t.apk").get_apk_activity()
+    # ApkInfo(r"D:\app\appium_study\img\t.apk").get_apk_activity()
 
 

@@ -19,7 +19,6 @@ class OperateElement():
         '''
         try:
             WebDriverWait(self.cts, common.WAIT_TIME).until(lambda x: elements_by(mOperate, self.cts))
-            print(mOperate["element_info"])
             return True
         except selenium.common.exceptions.TimeoutException:
             return False
@@ -51,8 +50,8 @@ def operate_click(mOperate,cts):
         elements_by(mOperate, cts)[mOperate["index"]].click()
     # 记录运行过程中的一些系统日志，比如闪退会造成自动化测试停止
     if common.SELENIUM_APPIUM == common.APPIUM:
-        errorLog.get_error(log=r"d:\operate_log.txt")
-
+        # errorLog.get_error(log=mOperate["log"], devices=mOperate["devices"])
+        pass
 # 左滑动
 def opreate_swipe_left(mOperate, cts):
     time.sleep(1)
@@ -74,7 +73,6 @@ def send_keys(mOperate,cts):
 # 封装常用的标签
 def elements_by(mOperate, cts):
     elements = {
-
         common.find_element_by_id : lambda :cts.find_element_by_id(mOperate["element_info"]),
         common.find_elements_by_id : lambda :cts.find_elements_by_id(mOperate["element_info"]),
         common.find_element_by_xpath: lambda :cts.find_element_by_xpath(mOperate["element_info"]),

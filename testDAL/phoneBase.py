@@ -1,76 +1,68 @@
 __author__ = 'Administrator'
+# -*- coding: utf-8 -*-
 import os
 import re
 import math
 from math import ceil
+import subprocess
 from common.variable import GetVariable as common
 # 得到手机信息
-def get_phone_info(cmd_log, devices):
-    os.system('adb -s ' + devices +' shell cat /system/build.prop >'+cmd_log)
-    l_list = {}
-    with open(cmd_log, "r") as f:
-        lines = f.readlines()
-        for line in lines:
-            line = line.split('=')
-            #Android 系统，如anroid 4.0
-            if (line[0] == 'ro.build.version.release'):
-                l_list["release"] = line[1]
-                #手机名字
-            if (line[0]=='ro.product.model'):
-                l_list["phone_name"] = line[1]
-                #手机品牌
-            if (line[0]=='ro.product.brand'):
-                 l_list["phone_model"] =  line[1]
+def get_phone_info(devices):
+    cmd = "adb -s "+ devices +" shell cat /system/build.prop "
+    # phone_info = os.popen(cmd, mode="r").readlines()
+    phone_info =subprocess.Popen(cmd, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE).stdout.readlines()
 
-    # 删除本地存储的手机信息文件
-    if os.path.exists(cmd_log):
-        os.remove(cmd_log)
+    l_list = {}
+    release = "ro.build.version.release"
+    model = "ro.product.model"
+    brand = "ro.product.brand"
+    for line in phone_info:
+         for i in line.split():
+            temp = i.decode()
+            if temp.find(release) >= 0:
+                # 版本
+                l_list["release"] = temp[len(release)+1:]
+                 #手机名字
+            if temp.find(model) >= 0:
+                    # l_list["phone_name"] = line[1]
+                l_list["model"] = temp[len(model) + 1:]
+                    #手机品牌
+            if temp.find(brand) >= 0:
+                     # l_list["phone_model"] =  line[1]
+                l_list["brand"] = temp[len(brand) + 1:]
+    print(l_list)
     return l_list
 
-def get_men_total(cmd_log, devices):
-    os.system("adb -s "+devices+ " shell cat /proc/meminfo >" + cmd_log)
-    men_total = ""
-    with open(cmd_log, "r") as f:
-            lines = f.readlines()
-            for line in lines:
-                line = line.split('=')
-                if line[0]:
-                    men_total = re.findall(r"\d+", line[0])[0]
-                    break
-    if os.path.exists(cmd_log):
-        os.remove(cmd_log)
+# 得到最大运行内存
+def get_men_total(devices):
+    cmd = "adb -s "+devices+ " shell cat /proc/meminfo"
+    get_cmd = os.popen(cmd).readlines()
+    men_total = 0
+    men_total_str = "MemTotal"
+    for line in get_cmd:
+        if line.find(men_total_str) >= 0:
+            men_total = line[len(men_total_str) +1:].replace("kB", "").strip()
+            break
     return int(men_total)
 # 得到几核cpu
-def get_cpu_kel(log, devices):
-    os.system("adb -s " +devices +" shell cat /proc/cpuinfo >" + log)
-    cpu_kel = 0
-    with open(log, "r") as f:
-            lines = f.readlines()
-            for line in lines:
-                line = line.split(':')
-                if line[0].find("processor") >= 0:
-                   cpu_kel += 1
-    if os.path.exists(log):
-        os.remove(log)
-    return str(cpu_kel) + "核"
-# print(get_cpu_kel("d:\\men.txt"))
+def get_cpu_kel(devices):
+    cmd = "adb -s " +devices +" shell cat /proc/cpuinfo"
+    get_cmd = os.popen(cmd).readlines()
+    find_str = "processor"
+    int_cpu = 0
+    for line in get_cmd:
+        if line.find(find_str) >= 0:
+            int_cpu += 1
+    return str(int_cpu) + "核"
 
 # 得到手机分辨率
 def get_app_pix(devices):
     result = os.popen("adb -s " + devices+ " shell wm size", "r")
     return result.readline().split("Physical size:")[1]
-
+# get_phone_info("DU2TAN15AJ049163")
+# get_phone_info("MSM8926")
 def get_avg_raw(l_men, devices):
-    if common.RAW == 0:
-        common.RAW = get_men_total(r"d:\men.txt", devices)
-    l_men = [math.ceil(((l_men[i])/common.RAW)*1024) for i in range(len(l_men))]  # 获取每次占用内存多少
+    l_men = [math.ceil(((l_men[i])/get_men_total(devices))*1024) for i in range(len(l_men))]  # 获取每次占用内存多少
     if len(l_men) > 0 :
             return str(math.ceil(sum(l_men)/len(l_men))) + "%"
-    return 0
-
-# def get_phone_Kernel(log):
-#     pix = get_app_pix()
-#     men_total = get_men_total(log)
-#     phone_msg = get_phone_info(log)
-#     cpu_sum = get_cpu_kel(log)
-#     return phone_msg, men_total, cpu_sum, pix
+    return "0%"

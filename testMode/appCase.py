@@ -14,6 +14,7 @@ class GetAppCase(Model):
     name = StringType()
     index = IntType()
     text = StringType()
+    log = StringType() # 本地log信息路径，一般由手机名字_型号构成
 
 # 用例的基本信息
 class GetAppCaseInfo(Model):
@@ -29,3 +30,5 @@ class GetAppCaseInfo(Model):
     test_cpu_avg = StringType()
     test_fps_max = StringType()
     test_fps_avg = StringType()
+    test_devices = StringType()
+    test_phone_name = StringType()

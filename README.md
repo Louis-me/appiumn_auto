@@ -7,6 +7,7 @@
 * APP监控了常用的men,cpu,fps
 * 数据维护用的YMAL
 * 邮件发送excel的测试报告
+* 支持多设备andoird并行
 
 # 用法
 
@@ -16,23 +17,21 @@
 git clone git@github.com:284772894/appiumn_auto.git
 ```
 
-**配置ini**
+**配置devices.yaml**
 
 ```
-[DEFAULT]
-selenium_appium=appium
-[appium]
-devices=DU2TAN15AJ049163
-Remote=127.0.0.1
-appiumjs=node D:\\app\Appium\\node_modules\\appium\\bin\\appium.js
-port=4723
-[selenium]
-selenium_jar = java -jar D:\\app\\appium_study\\img\\selenium-server-standalone-3.0.1.jar
-sel_remote=http://127.0.0.1:4444/wd/hub
-open_url=http://182.254.228.211:9000/index.php/Admin/index/login.html
+appium:
+ - devices: JTJ4C16331013562
+   port: 4723
+   config: node D:\app\Appium\node_modules\appium\bin\appium.js  -p 4723 -bp 4733
+   platformName: android
+ - devices: MSM8926
+   port: 4724
+   config: node D:\app\Appium\node_modules\appium\bin\appium.js  -p 4724 -bp 4734
+   platformName: android
 ```
 
-**配置用例ymal**
+**yaml**
 
 * [case的api](mark.md)
 
@@ -77,19 +76,19 @@ pyhton testRunner/runner.py
 
 * 运行方式
 
-![run.gif](img/run.gif "run.gif")
+![run1.gif](img/run.gif "run.gif")
 
 * APP运行情况
 
-![app.gif](img/app.gif "app.gif")
+![run1.gif](img/run1.gif "run1.gif")
 
 * 结果展示
 
 ![testEmail.png](img/testEmail.png "testEmail.png")
 
-![1.png](img/1.png "1.png")
+![testinit.png](img/testinit.png "testinit.png")
 
-![2.png](img/2.png "2.png")
+![testinfo.png](img/testinfo.png "testinfo.png")
 
 
 # 其他

@@ -3,11 +3,8 @@ from testDAL import server
 
 # 控制appium的服务
 class AppiumServer():
-    def __init__(self, openAppium, baseUrl, selenium_appium):
-        self.openAppium = openAppium
-        self.baseUrl = baseUrl
-        self.selenium_appium = selenium_appium
-        self.server = server.AppiumServer(self.openAppium, self.baseUrl, self.selenium_appium)
+    def __init__(self, l_devices):
+        self.server = server.AppiumServer(l_devices)
     def start_server(self):
         self.server.start_server()
     def stop_server(self):

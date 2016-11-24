@@ -2,10 +2,10 @@ __author__ = 'Administrator'
 import os,time
 import subprocess
 
-def get_error(log="d:\log.txt"):
-    handle = subprocess.Popen("adb -d  logcat >" +log, shell=True)
+def get_error(log="d:\log.txt", devices=""):
+    handle = subprocess.Popen("adb -s "+devices+ "-d  logcat >" +log, shell=True)
     time.sleep(1)
-    os.system("adb logcat -c")
+    os.system("adb logcat -s "+devices+" -c")
     subprocess.Popen("taskkill /F /T /PID " + str(handle.pid) , shell=True)
     # with open(log, encoding="utf-8", mode="r") as f:
     #     lines = f.readlines()
@@ -23,6 +23,6 @@ def get_error(log="d:\log.txt"):
     #             print("存在EXCEPTION错误:", line)
     #             GetVariable.I_EXCEPTION += 1
 
-
-def save_log(log="d:\log.txt", pack=""):
-    os.system("adb logcat | grep " + pack + ">" +log)
+#
+# def save_log(log="d:\log.txt", pack=""):
+#     os.system("adb logcat | grep " + pack + ">" +log)

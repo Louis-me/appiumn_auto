@@ -5,17 +5,17 @@
   operate_type: click
   test_id: 1002
   test_intr: 登陆
--
+- 
   element_info: cn.ibona.t1_beta:id/passwordEditText
   find_type: by_id
   operate_type: send_keys
   text: 123456
 
--
+- 
   element_info: cn.ibona.t1_beta:id/phoneNumberEditText
   find_type: by_id
   operate_type: send_keys
-  text: 18576759587
+  text: 12345678995
 - 
   element_info: cn.ibona.t1_beta:id/loginButton
   find_type: by_id
