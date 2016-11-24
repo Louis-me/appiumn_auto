@@ -240,6 +240,6 @@ appium:
 
 * 逐渐取消schematics
 
-## 运行结果
-![run1.png](img/run1.png "run1.png")
+## app执行情况
+![run1.gif](img/run1.gif "run1.gif")
 
