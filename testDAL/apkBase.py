@@ -1,4 +1,4 @@
-__author__ = 'Administrator'
+__author__ = 'shikun'
 import math
 from math import  floor
 import subprocess

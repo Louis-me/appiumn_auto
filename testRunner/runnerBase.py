@@ -1,4 +1,4 @@
-__author__ = 'Administrator'
+__author__ = 'shikun'
 # -*- coding: utf-8 -*-
 import unittest
 from appium import webdriver
@@ -17,7 +17,7 @@ PATH = lambda p: os.path.abspath(
 
 
 def appium_testcase(l_devices):
-    apk_base = apkBase.apkInfo(PATH("../img/t.apk"))
+    apk_base = apkBase.apkInfo(PATH("../img/monkneyTest.apk"))
     desired_caps = {}
     desired_caps['platformName'] = l_devices["platformName"]
     desired_caps['platformVersion'] = l_devices["platformVersion"]
@@ -32,7 +32,7 @@ def appium_testcase(l_devices):
     remote = "http://127.0.0.1:" + str(l_devices["port"]) + "/wd/hub"
     driver = webdriver.Remote(remote, desired_caps)
     # common.DRIVER = driver
-    common.FLAG = False
+    # common.FLAG = False
     return driver
 def selenium_testcase(get_devices):
     chromedriver = "C:\Program Files (x86)\Google\Chrome\Application\chromedriver.exe"
@@ -63,7 +63,7 @@ class TestInterfaceCase(unittest.TestCase):
         #     # data = driver.title
             pass
     def setUp(self):
-        if self.l_devices["platformName"] == common.ANDROID and common.FLAG:
+        if self.l_devices["platformName"] == common.ANDROID:
             self.driver = appium_testcase(self.l_devices)
     def tearDown(self):
         # self.driver.close_app()

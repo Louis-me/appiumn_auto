@@ -1,0 +1,14 @@
+﻿---
+-
+  element_info: com.example.monkneytest:id/btn2
+  find_type: by_id
+  operate_type: click
+  test_id: 1002
+  test_intr: 闪退测试2
+-
+  element_info: com.example.monkneytest:id/btn1
+  find_type: by_id
+  operate_type: click
+-
+  element_info: com.example.monkneytest:id/btn3
+  find_type: by_id

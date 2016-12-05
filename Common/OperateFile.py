@@ -1,4 +1,4 @@
-__author__ = 'Administrator'
+__author__ = 'shikun'
 import os
 class OperateFile:
     #method(r,w,a)

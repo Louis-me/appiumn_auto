@@ -1,4 +1,4 @@
-__author__ = 'Administrator'
+__author__ = 'shikun'
 from testDAL import phoneBase
 def get_avg_raw(l_men, deviceName):
     return phoneBase.get_avg_raw(l_men, deviceName)

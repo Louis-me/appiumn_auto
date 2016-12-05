@@ -1,4 +1,4 @@
-__author__ = 'Administrator'
+__author__ = 'shikun'
 from testDAL import report
 class OperateReport:
     def __init__(self, wd=None, data=None):

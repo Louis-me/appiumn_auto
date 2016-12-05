@@ -1,4 +1,4 @@
-__author__ = 'Administrator'
+__author__ = 'shikun'
 from testDAL import adbCommon
 
 def attached_devices():

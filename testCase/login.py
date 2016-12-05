@@ -1,4 +1,4 @@
-__author__ = 'Administrator'
+__author__ = 'shikun'
 import unittest
 import os
 PATH = lambda p: os.path.abspath(
@@ -8,7 +8,6 @@ from testBLL import appCase as b_app_case
 from testMode import appCase as m_app_case
 from testRunner.runnerBase import TestInterfaceCase as te
 from testBLL import apkBase
-
 
 
 class testLogin(te):

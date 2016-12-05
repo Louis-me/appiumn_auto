@@ -1,4 +1,4 @@
-__author__ = 'Administrator'
+__author__ = 'shikun'
 # -*- coding: utf-8 -*-
 from testDAL import appCase
 class GetAppCase():

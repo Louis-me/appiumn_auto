@@ -1,4 +1,4 @@
-__author__ = 'Administrator'
+__author__ = 'shikun'
 # -*- coding: utf-8 -*-
 import os
 import re
@@ -13,23 +13,25 @@ def get_phone_info(devices):
     phone_info =subprocess.Popen(cmd, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE).stdout.readlines()
 
     l_list = {}
-    release = "ro.build.version.release"
-    model = "ro.product.model"
-    brand = "ro.product.brand"
+    release = "ro.build.version.release=" # 版本
+    model = "ro.product.model=" #型号
+    brand = "ro.product.brand=" # 品牌
+    device = "ro.product.device=" # 设备名
     for line in phone_info:
          for i in line.split():
             temp = i.decode()
             if temp.find(release) >= 0:
-                # 版本
-                l_list["release"] = temp[len(release)+1:]
-                 #手机名字
+                l_list["release"] = temp[len(release):]
+                break
             if temp.find(model) >= 0:
-                    # l_list["phone_name"] = line[1]
-                l_list["model"] = temp[len(model) + 1:]
-                    #手机品牌
+                l_list["model"] = temp[len(model):]
+                break
             if temp.find(brand) >= 0:
-                     # l_list["phone_model"] =  line[1]
-                l_list["brand"] = temp[len(brand) + 1:]
+                l_list["brand"] = temp[len(brand):]
+                break
+            if temp.find(device) >= 0:
+                l_list["device"] = temp[len(device) :]
+                break
     print(l_list)
     return l_list
 
@@ -62,7 +64,16 @@ def get_app_pix(devices):
 # get_phone_info("DU2TAN15AJ049163")
 # get_phone_info("MSM8926")
 def get_avg_raw(l_men, devices):
+    '''
+
+    :param l_men: 内存使用列表
+    :param devices: 设备名
+    :return:
+    '''
     l_men = [math.ceil(((l_men[i])/get_men_total(devices))*1024) for i in range(len(l_men))]  # 获取每次占用内存多少
     if len(l_men) > 0 :
             return str(math.ceil(sum(l_men)/len(l_men))) + "%"
     return "0%"
+
+if __name__=="__main__":
+    get_phone_info("DU2TAN15AJ049163")

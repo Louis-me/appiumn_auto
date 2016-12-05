@@ -1,4 +1,4 @@
-__author__ = 'Administrator'
+__author__ = 'shikun'
 import math
 from common.variable import GetVariable as common
 def phone_avg_use_cpu(cpu):

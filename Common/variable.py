@@ -1,4 +1,4 @@
-__author__ = 'Administrator'
+__author__ = 'shikun'
 # 查找元素的方式
 class GetVariable(object):
     NAME = "name"
@@ -27,35 +27,11 @@ class GetVariable(object):
     DRIVER = ""
     TAP = "tap"
     SWIPELEFT = "swipeLeft"
-    FLAG = True
-
 
     SELENIUM_APPIUM = "appium"
 
-    # RRPORT = {"info":[], "init": []}
-    # RESULT = {"info":[]}
-    # RESULT["test_module"] = "登陆模块1"
     SEND_KEYS = "send_keys"
     FIND_STR = "find_str"
-
-    # test_sum = 0
-    # test_success = 0
-    # test_failed = 0
-    # test_error_title = 0
-    # time_took = ""
-    # MEN = []
-    # CPU = []
-    # PACKAGE = ""
-    # FPS = []
-    # RAW = 0
-   # 错误日志
-    ANR = "ANR"
-    I_ANR = 0
-    CRASH = "CRASH"
-    I_CRASH = 0
-    EXCEPTION = "Exception"
-    I_EXCEPTION = 0
-
     WAIT_TIME = 5
 
     #selenium
@@ -65,6 +41,14 @@ class GetVariable(object):
     REPORT_INFO_PATH = "d:/info.txt"
     REPORT_INIT = "d:/init.txt"
     REPORT_COLLECT_PATH = "d:/collect.txt"
+    CRASH_LOG_PATH = "d:/crash.txt" # 存放crash的json文件名
+    #my server
+    HOST = '192.168.1.38'
+    PORT = 8088
 
+    PROTOCOL = "http://" #协议
+    APACHE_PATH = "D:/app/Apache2.2/htdocs/appium/log/" #apapche器的地址，开发可以在这个上面下载异常日志
+
+    SCREEN_IMG_PATH = "D:/app/Apache2.2/htdocs/appium/img/" # 截图地址
 
 

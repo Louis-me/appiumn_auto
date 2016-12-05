@@ -88,7 +88,7 @@ pyhton testRunner/runner.py
 
 ![testinit.png](img/testinit.png "testinit.png")
 
-![testinfo.png](img/testinfo.png "testinfo.png")
+![testReport12-5.png](img/testReport12-5.png "testReport12-5.png")
 
 
 # ÆäËû

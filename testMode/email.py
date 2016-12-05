@@ -1,4 +1,4 @@
-__author__ = 'Administrator'
+__author__ = 'shikun'
 from schematics.models import Model
 from schematics.types import StringType, IntType
 from schematics.types.compound import ListType

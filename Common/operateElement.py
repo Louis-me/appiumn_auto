@@ -1,15 +1,15 @@
-__author__ = 'Administrator'
+__author__ = 'shikun'
 # -*- coding: utf-8 -*-
 from selenium.webdriver.support.ui import WebDriverWait
 import selenium.common.exceptions
 from common.variable import GetVariable as common
 import time
-from common import errorLog
+from common import errorLog1
 
 # 此脚本主要用于查找元素是否存在，操作页面元素
 class OperateElement():
     def __init__(self, driver=""):
-        self.cts = driver
+        self.driver = driver
     def findElement(self, mOperate):
         '''
         查找元素.mOperate是字典
@@ -18,7 +18,7 @@ class OperateElement():
         find_type: find类型
         '''
         try:
-            WebDriverWait(self.cts, common.WAIT_TIME).until(lambda x: elements_by(mOperate, self.cts))
+            WebDriverWait(self.driver, common.WAIT_TIME).until(lambda x: elements_by(mOperate, self.driver))
             return True
         except selenium.common.exceptions.TimeoutException:
             return False
@@ -30,10 +30,10 @@ class OperateElement():
     def operate_element(self,  mOperate):
         if self.findElement(mOperate):
             elements = {
-                common.CLICK: lambda: operate_click(mOperate, self.cts),
-                # GetVariable.TAP: lambda: operate_tap(mOperate["find_type"], self.cts,  mOperate["element_info"], arg),
-                common.SEND_KEYS: lambda: send_keys(mOperate, self.cts),
-                common.SWIPELEFT: lambda : opreate_swipe_left(mOperate, self.cts),
+                common.CLICK: lambda: operate_click(mOperate, self.driver),
+                # GetVariable.TAP: lambda: operate_tap(mOperate["find_type"], self.driver,  mOperate["element_info"], arg),
+                common.SEND_KEYS: lambda: send_keys(mOperate, self.driver),
+                common.SWIPELEFT: lambda : opreate_swipe_left(mOperate, self.driver),
                 common.SEND_CODE: lambda : send_code()
             }
             return elements[mOperate["operate_type"]]()
@@ -63,8 +63,8 @@ def opreate_swipe_left(mOperate, cts):
 # start_x,start_y,end_x,end_y
 
 # 轻打x轴向右移动x单位，y轴向下移动y单位
-# def operate_tap(elemen_by,cts,element_info, xy=[]):
-#     elements_by(elemen_by, cts, element_info).tap(x=xy[0], y=xy[1])
+# def operate_tap(elemen_by,driver,element_info, xy=[]):
+#     elements_by(elemen_by, driver, element_info).tap(x=xy[0], y=xy[1])
 
 def send_keys(mOperate,cts):
     elements_by(mOperate, cts).send_keys(mOperate["text"])

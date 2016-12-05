@@ -224,11 +224,11 @@ python runner.py
 appium:
  - devices: JTJ4C16331013562
    port: 4723
-   config: node D:\app\Appium\node_modules\appium\bin\appium.js  -p 4723 -bp 4733
+   config: node D:\app\Appium\node_modules\appium\bin\appium.js  -p 4723 -bp 4733 -U JTJ4C16331013562
    platformName: android
  - devices: MSM8926
    port: 4724
-   config: node D:\app\Appium\node_modules\appium\bin\appium.js  -p 4724 -bp 4734
+   config: node D:\app\Appium\node_modules\appium\bin\appium.js  -p 4724 -bp 4734 -U MSM8926
    platformName: android
 
 ```
@@ -242,4 +242,41 @@ appium:
 
 ## app执行情况
 ![run1.gif](img/run1.gif "run1.gif")
+
+# 2016-12-5
+* 新增对多机闪退监控,[自己封装的jar包](https://github.com/284772894/CrashHandler)，应用到app的application中即可
+	* 封装好的监控闪退日志外，另外发了一个http get请求到我的框架，框架启动了一个web server监控各个设备发来的闪退信息
+* 本地开启apache记录日志和图片的方式，开发点击下载日志可以直接远程下载
+
+```
+PROTOCOL = "http://" #协议
+APACHE_PATH = "D:/app/Apache2.2/htdocs/appium/log/" #apapche器的地址，开发可以在这个上面下载异常日志
+SCREEN_IMG_PATH = "D:/app/Apache2.2/htdocs/appium/img/" # 截图地址
+```
+
+* 记录闪退日记情况
+
+```
+versionCode = 1
+PRODUCT = H60-L02
+MODEL = H60-L02
+versionName = 1.0
+SDK_INT = 19
+java.lang.NullPointerException
+	at com.example.monkneytest.MainActivity$1.onClick(MainActivity.java:35)
+	at android.view.View.performClick(View.java:4446)
+	at android.view.View$PerformClick.run(View.java:18480)
+	at android.os.Handler.handleCallback(Handler.java:733)
+	at android.os.Handler.dispatchMessage(Handler.java:95)
+	at android.os.Looper.loop(Looper.java:136)
+	at android.app.ActivityThread.main(ActivityThread.java:5314)
+	at java.lang.reflect.Method.invokeNative(Native Method)
+	at java.lang.reflect.Method.invoke(Method.java:515)
+	at com.android.internal.os.ZygoteInit$MethodAndArgsCaller.run(ZygoteInit.java:864)
+	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:680)
+	at dalvik.system.NativeStart.main(Native Method)
+```
+
+* 测试闪退，case失败过程的新增截图
+![testReport12-5.png](img/testReport12-5.png "testReport12-5.png")
 
