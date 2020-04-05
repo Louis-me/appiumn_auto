@@ -1,23 +1,23 @@
-# ÏîÄ¿Ãû¼°¼ò½é
-* ´ËÏîÄ¿ÊÇÔÚ[appium](https://github.com/appium/appium)ºÍ[Selenium](https://github.com/SeleniumHQ/selenium)¿ªÔ´¹¤¾ß·â×°¶ø³ÉµÄ×Ô¶¯»¯appºÍweb²âÊÔ¹¤¾ß
+# é¡¹ç›®ååŠç®€ä»‹
+* æ­¤é¡¹ç›®æ˜¯åœ¨[appium](https://github.com/appium/appium)å’Œ[Selenium](https://github.com/SeleniumHQ/selenium)å¼€æºå·¥å…·å°è£…è€Œæˆçš„è‡ªåŠ¨åŒ–appå’Œwebæµ‹è¯•å·¥å…·
 
-# ¹¦ÄÜ
-* ¶¼ÊÇ»ùÓÚpython3
-* ¶¼ÊÇ»ùÓÚwebdriver£¬´ó²¿·Ö´úÂë¶¼¿ÉÒÔÍ¨ÓÃ£¬Ö»ÊÇÅäÖÃÎÄ¼ş²»Ò»Ñù
-* APP¼à¿ØÁË³£ÓÃµÄmen,cpu,fps
-* Êı¾İÎ¬»¤ÓÃµÄYMAL
-* ÓÊ¼ş·¢ËÍexcelµÄ²âÊÔ±¨¸æ
-* Ö§³Ö¶àÉè±¸andoird²¢ĞĞ
+# åŠŸèƒ½
+* éƒ½æ˜¯åŸºäºpython3
+* éƒ½æ˜¯åŸºäºwebdriverï¼Œå¤§éƒ¨åˆ†ä»£ç éƒ½å¯ä»¥é€šç”¨ï¼Œåªæ˜¯é…ç½®æ–‡ä»¶ä¸ä¸€æ ·
+* APPç›‘æ§äº†å¸¸ç”¨çš„men,cpu,fps
+* æ•°æ®ç»´æŠ¤ç”¨çš„YMAL
+* é‚®ä»¶å‘é€excelçš„æµ‹è¯•æŠ¥å‘Š
+* æ”¯æŒå¤šè®¾å¤‡andoirdå¹¶è¡Œ
 
-# ÓÃ·¨
+# ç”¨æ³•
 
-**ÏÂÔØÏîÄ¿:**
+**ä¸‹è½½é¡¹ç›®:**
 
 ```
-git clone git@github.com:284772894/appiumn_auto.git
+git clone git@github.com:Louis-me/appiumn_auto.git
 ```
 
-**ÅäÖÃdevices.yaml**
+**é…ç½®devices.yaml**
 
 ```
 appium:
@@ -33,7 +33,7 @@ appium:
 
 **yaml**
 
-* [caseµÄapi](mark.md)
+* [caseçš„api](mark.md)
 
 ```
 --- 
@@ -42,7 +42,7 @@ appium:
   find_type: by_id
   operate_type: click
   test_id: 1002
-  test_intr: µÇÂ½
+  test_intr: ç™»é™†
 - 
   element_info: cn.ibona.t1_beta:id/passwordEditText
   find_type: by_id
@@ -66,23 +66,23 @@ appium:
 
 
 
-**ÃüÃûĞĞÔËĞĞ:**
+**å‘½åè¡Œè¿è¡Œ:**
 
 ```
 pyhton testRunner/runner.py
 ```
 
-# Ê¹ÓÃ½ØÍ¼
+# ä½¿ç”¨æˆªå›¾
 
-* ÔËĞĞ·½Ê½
+* è¿è¡Œæ–¹å¼
 
 ![run1.gif](img/run.gif "run.gif")
 
-* APPÔËĞĞÇé¿ö
+* APPè¿è¡Œæƒ…å†µ
 
 ![run1.gif](img/run1.gif "run1.gif")
 
-* ½á¹ûÕ¹Ê¾
+* ç»“æœå±•ç¤º
 
 ![testEmail.png](img/testEmail.png "testEmail.png")
 
@@ -91,8 +91,8 @@ pyhton testRunner/runner.py
 ![testReport12-5.png](img/testReport12-5.png "testReport12-5.png")
 
 
-# ÆäËû
-* ¸ü¶àĞÅÏ¢²é¿´ÎÒµÄ[¸üĞÂÈÕÖ¾](channel_log.md)
+# å…¶ä»–
+* æ›´å¤šä¿¡æ¯æŸ¥çœ‹æˆ‘çš„[æ›´æ–°æ—¥å¿—](channel_log.md)
 
 
 
